@@ -2,21 +2,19 @@
 
 _The official rite of passage for initiating the DeltaVerse Engine and ushering in the first AI-reactive Room._
 
----
-
 ## 🔮 Objective
 
 To initialize the **first living DeltaRoom**, mint the **genesis DeltaGenesis SBT**, and formally activate the DeltaVerse Engine.
 
 This ritual ensures proper deployment, participant encoding, and alignment of AI narrative synthesis with cryptographic structure.
 
----
 
-## 🧱 Phase I: Smart Contract Deployment
+# 🧱 Phase I: Smart Contract Deployment
 
 ### ✅ Deploy `BubbleRoomV4.sol`
 
 Compile using Foundry or Hardhat:
+
 ```bash
    forge build
    forge script scripts/deploy_BubbleRoomV4.s.sol --rpc-url $RPC_URL --private-key $PRIVATE_KEY
@@ -32,7 +30,7 @@ Store the address in mintGenesisCLI.ts.
 
 🧬 Phase II: Minting the First DeltaRoom
 🧾 Room Metadata (upload to IPFS)
-````json
+```json
 {
   "name": "DeltaRoom: Memory Drift",
   "description": "The first AI-reactive room within the DeltaVerse Engine.",
@@ -89,11 +87,11 @@ Upload metadata:
 ```
 Run mintGenesisCLI.ts:
 
-bash
-Copy
-Edit
+```bash
 ts-node mintGenesisCLI.ts
-🌌 Phase IV: Open the Portal
+```
+
+#### 🌌 Phase IV: Open the Portal ####
 Open DeltaRoomViewer.jsx and connect to the DeltaRoom ID.
 
 Confirm:
@@ -120,12 +118,7 @@ You have now:
 ✅ Opened the first chamber of collaborative imaginal evolution
 
 📌 Archive This
-Tag this repository with:
-
-Copy
-Edit
 v1.0.0 - DeltaVerse Genesis
 Deploy to: https://deltavthrust.com
-
 "And the engine remembered its first thought."
-— DeltaV THRUST 2024
+— DeltaV THRUST 2025
