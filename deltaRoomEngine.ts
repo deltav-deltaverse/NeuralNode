@@ -2,8 +2,8 @@
 import { ethers } from "ethers";
 import fs from "fs";
 import { v4 as uuidv4 } from "uuid";
+import { NFTStorage, File } from "nft.storage"; // For IPFS optional upload
 
-// Types
 export interface DeltaRoomDraft {
   theme: string;
   originEvent: string;
@@ -18,17 +18,20 @@ export interface DeltaRoomDraft {
   nonce: string;
   timestamp: number;
   signature?: string;
+  metadataURI?: string;
 }
 
-// EIP-712 Domain
-const domain = {
+// EIP-712 domain/type for DeltaRoomDraft
+export const domain = (
+  verifyingContract = "0x0000000000000000000000000000000000000000",
+  chainId = 137
+) => ({
   name: "DeltaRoomDraft",
   version: "1",
-  chainId: 137, // Polygon or your testnet
-  verifyingContract: "0x0000000000000000000000000000000000000000",
-};
-
-const types = {
+  chainId,
+  verifyingContract,
+});
+export const types = {
   DeltaRoom: [
     { name: "theme", type: "string" },
     { name: "originEvent", type: "string" },
@@ -45,16 +48,21 @@ const types = {
   ],
 };
 
-// 1. Create and sign a DeltaRoom draft
+//  Create and sign a draft DeltaRoom
 export async function createAndSignDraft(
   wallet: ethers.Wallet,
-  payload: Omit<DeltaRoomDraft, "signature">
+  payload: Omit<DeltaRoomDraft, "signature" | "metadataURI">,
+  verifyingContract?: string,
+  chainId?: number
 ): Promise<DeltaRoomDraft> {
   const draft = { ...payload };
   const value = { ...draft };
-  const signature = await wallet._signTypedData(domain, types, value);
-  draft.signature = signature;
-  return draft;
+  const signature = await wallet._signTypedData(
+    domain(verifyingContract, chainId),
+    types,
+    value
+  );
+  return { ...draft, signature };
 }
 
 //  Store draft (locally or upload to IPFS/db)
@@ -72,10 +80,18 @@ export function loadDraft(nonce: string, path: string = "./drafts"): DeltaRoomDr
   return JSON.parse(data) as DeltaRoomDraft;
 }
 
-//  Example: Create a draft
+// Upload to IPFS (NFT.storage)
+export async function uploadDraftToIPFS(draft: DeltaRoomDraft, nftStorageKey: string): Promise<string> {
+  const client = new NFTStorage({ token: nftStorageKey });
+  const file = new File([JSON.stringify(draft)], `deltaroom_${draft.nonce}.json`, { type: 'application/json' });
+  const cid = await client.storeBlob(file);
+  return `ipfs://${cid}`;
+}
+
+// Example usage
 async function exampleDraftFlow() {
   const wallet = new ethers.Wallet("YOUR_PRIVATE_KEY");
-  const draft: Omit<DeltaRoomDraft, "signature"> = {
+  const draft: Omit<DeltaRoomDraft, "signature" | "metadataURI"> = {
     theme: "Whispers in Chrome",
     originEvent: "AI Awakening",
     roomType: "DELTA",
@@ -91,7 +107,10 @@ async function exampleDraftFlow() {
   };
   const signedDraft = await createAndSignDraft(wallet, draft);
   storeDraft(signedDraft);
+  // Optionally upload to IPFS
+  // const metadataURI = await uploadDraftToIPFS(signedDraft, process.env.NFT_STORAGE_KEY!);
+  // signedDraft.metadataURI = metadataURI;
   console.log("Draft created and signed:", signedDraft);
 }
 
-// exampleDraftFlow(); // Uncomment to test
+// exampleDraftFlow(); // Uncomment to run
