@@ -77,5 +77,5 @@ DeltaVerse does the rest—saving only what matters, and keeping the process sim
 
 ---
 
-© DeltaV THRUST 2021 | https://deltavthrust.com
+© DeltaV THRUST 2025 | https://deltavthrust.com
 
