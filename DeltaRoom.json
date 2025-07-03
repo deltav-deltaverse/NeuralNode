@@ -1,0 +1,20 @@
+{
+  "name": "DeltaRoom: Memory Drift Chamber",
+  "description": "An evolving narrative space reacting to collective imagination and AI pattern sensing.",
+  "theme": "Memory Drift",
+  "room_type": "DELTA",
+  "ai_seed": "Dreamlike interdimensional fracturing of old languages.",
+  "tone": "Surreal",
+  "evolves": true,
+  "created_by": "0xProfessor",
+  "timestamp": 1728491100,
+  "environment": {
+    "initial_scene": "Crystalline forest with echo shadows",
+    "mood": "Melancholic"
+  },
+  "permissions": {
+    "access": "TokenGated",
+    "visibility": "Public",
+    "contributors": ["0xabc...", "0xdef..."]
+  }
+}
