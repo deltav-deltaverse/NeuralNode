@@ -31,7 +31,7 @@ Defines user authority within a room context:
 ```solidity
 enum Role { NONE, MEMBER, AGENT, MODERATOR }
 NONE: No access
-
+```
 MEMBER: Default viewer/participant
 
 AGENT: Power user, signals, modifies content
@@ -41,14 +41,13 @@ MODERATOR: Full control of participant set
 🔸 enum RoomType
 Defines the existential nature of the room.
 
-solidity
-Copy
-Edit
+```solidity
 enum RoomType {
   TEMPORARY, LIVING, EPHEMERAL, ARCHIVAL,
   INCUBATOR, SIGNAL, STORAGE, TIMELOCKED,
   VAULT, DELTA
 }
+```
 Type	Description
 TEMPORARY	Disposable, time-limited session room
 LIVING	Persistent space, always mutable
@@ -64,9 +63,7 @@ DELTA	AI-reactive, tone-sensitive, semantically adaptive room (DeltaVerse core)
 🧠 struct Room
 The core room schema — each NFT minted instantiates this structure.
 
-solidity
-Copy
-Edit
+```solidity
 struct Room {
   string theme;
   string originEvent;
@@ -88,7 +85,9 @@ struct Room {
   string tone;
   bool evolves;
 }
+```
 ⚙️ Contract Functions
+
 🔨 mintRoom(...)
 Mints a new BubbleRoom NFT, initializes structural and AI metadata, and assigns roles to participants.
 
@@ -108,28 +107,26 @@ aiSeed, tone, evolves: AI-reactive fields
 
 Returns: roomId (uint256)
 
-solidity
-Copy
-Edit
+```solidity
 function mintRoom(...) external returns (uint256);
+```
 👁️ getRoomAI(uint256 roomId)
+
 Fetches the AI-metadata trio for the given room.
 
-solidity
-Copy
-Edit
+```solidity
 function getRoomAI(uint256 roomId)
   external view
   returns (string memory aiSeed, string memory tone, bool evolves);
+```
 👥 getRoomParticipants(uint256 roomId)
 Returns the full participant list.
 
-solidity
-Copy
-Edit
+```solidity
 function getRoomParticipants(uint256 roomId)
   external view
   returns (address[] memory);
+```
 🔐 Access Control
 Only the original room creator (NFT owner) may:
 
@@ -203,5 +200,5 @@ Dynamic governance via interaction tone
 
 "And the room listened. And it changed. And it remembered."
 
-© DeltaV THRUST 2024
+© DeltaV THRUST 2025
 MIT License – https://deltavthrust.com
