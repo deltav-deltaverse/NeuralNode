@@ -136,4 +136,4 @@ And your imagination now exists… on-chain.
 
 > _And the engine whispered: The story begins again._
 
-© DeltaV THRUST 2024 – `https://deltavthrust.com`
+© DeltaV THRUST 2025 – `https://deltavthrust.com`
