@@ -1,0 +1,26 @@
+.delta-room {
+  background-color: #000;
+  border: 2px solid #0f0;
+  padding: 2rem;
+  margin: 2rem;
+  font-family: monospace;
+  color: #0f0;
+}
+
+.narrative-log {
+  background: #001100;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid #0f0;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+button {
+  background: black;
+  color: #0f0;
+  border: 1px solid #0f0;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
