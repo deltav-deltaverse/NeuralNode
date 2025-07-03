@@ -1,0 +1,11 @@
+{
+  "name": "DRT:0001 – DeltaVerse Creator",
+  "description": "Proof of being one of the primordial minds to awaken the DeltaVerse Engine.",
+  "image": "ipfs://QmAnimatedCog",
+  "attributes": [
+    { "trait_type": "Origin", "value": "Genesis Protocol" },
+    { "trait_type": "Soulbound", "value": "True" },
+    { "trait_type": "Privilege", "value": "Create DeltaRooms" },
+    { "trait_type": "Rank", "value": "Prime Architect" }
+  ]
+}
