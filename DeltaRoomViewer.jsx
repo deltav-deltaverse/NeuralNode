@@ -1,72 +1,74 @@
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
-import { LitJsSdk } from 'lit-js-sdk'; // Optional for vault decrypt
-import abi from '../abi/abi4.json'; // ABI from BubbleRoomV4
-import './DeltaRoomViewer.css';
+import abi from '../abi/BubbleRoomV4.json'; // Replace with ABI path
 
 const CONTRACT_ADDRESS = '0xYourBubbleRoomV4Address';
 
-const DeltaRoomViewer = ({ roomId, provider }) => {
+const DeltaRoomViewer = ({ roomId, draft, provider }) => {
   const [roomData, setRoomData] = useState(null);
   const [participants, setParticipants] = useState([]);
-  const [vaultAccess, setVaultAccess] = useState(false);
-  const [narrative, setNarrative] = useState("Loading...");
+  const [isDraft, setIsDraft] = useState(!!draft);
 
-  const signer = provider.getSigner();
-  const contract = new ethers.Contract(CONTRACT_ADDRESS, abi, signer);
+  // Contract setup
+  let signer, contract;
+  if (provider && !isDraft) {
+    signer = provider.getSigner();
+    contract = new ethers.Contract(CONTRACT_ADDRESS, abi, signer);
+  }
 
-  const fetchRoom = async () => {
-    try {
-      const aiMeta = await contract.getRoomAI(roomId);
-      const members = await contract.getRoomParticipants(roomId);
-
-      setRoomData({
-        aiSeed: aiMeta[0],
-        tone: aiMeta[1],
-        evolves: aiMeta[2],
-      });
-
-      setParticipants(members);
-
-      // Optional: fetch narrative log from IPFS
-      const logURI = `https://ipfs.io/ipfs/QmNarrativeCID`; // You'd get this from metadataCID
-      const response = await fetch(logURI);
-      const json = await response.json();
-      setNarrative(json.story || "No narrative log found.");
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  const requestVaultAccess = async () => {
-    // OPTIONAL: integrate Lit protocol to decrypt room vault
-    setVaultAccess(true); // Simulate granted
-  };
-
+  // Load onchain room or draft
   useEffect(() => {
-    fetchRoom();
-  }, []);
+    if (isDraft && draft) {
+      setRoomData({
+        theme: draft.theme,
+        aiSeed: draft.aiSeed,
+        tone: draft.tone,
+        evolves: draft.evolves,
+        participants: draft.participants,
+        roomType: draft.roomType,
+        storageCID: draft.storageCID,
+        unlockTime: draft.unlockTime,
+      });
+      setParticipants(draft.participants);
+    } else if (contract && roomId) {
+      // On-chain
+      (async () => {
+        const [aiSeed, tone, evolves] = await contract.getRoomAI(roomId);
+        const members = await contract.getRoomParticipants(roomId);
+        setRoomData({
+          aiSeed, tone, evolves,
+          participants: members,
+        });
+        setParticipants(members);
+      })();
+    }
+  }, [roomId, draft, contract, isDraft]);
+
+  // Mint draft to chain
+  const mintDraftToChain = async () => {
+    if (!draft || !signer) return alert("No draft or provider!");
+    // This is where you call DeltaVerseOrchestrator.mintFromSignature()
+    alert("Mint from signature not implemented in demo!");
+    // Example: 
+    // const orchestrator = new ethers.Contract('0xOrchestrator', orchestratorAbi, signer);
+    // const tx = await orchestrator.mintFromSignature(ethers.utils.toUtf8Bytes(JSON.stringify(draft)), draft.signature);
+    // await tx.wait();
+  };
 
   if (!roomData) return <div className="room-loading">Loading DeltaRoom...</div>;
 
   return (
-    <div className={`delta-room ${roomData.tone.toLowerCase()}`}>
-      <h2>🧠 DeltaRoom #{roomId}</h2>
+    <div className={`delta-room ${roomData.tone?.toLowerCase() || "default"}`}>
+      <h2>🧠 DeltaRoom {isDraft ? <span>(DRAFT)</span> : `#${roomId}`}</h2>
+      <p><strong>Theme:</strong> {roomData.theme}</p>
       <p><strong>AI Seed:</strong> {roomData.aiSeed}</p>
       <p><strong>Tone:</strong> {roomData.tone}</p>
       <p><strong>Evolves:</strong> {roomData.evolves ? "Yes" : "No"}</p>
-      <p><strong>Participants:</strong> {participants.length}</p>
-
-      <div className="narrative-log">
-        <h3>📜 Narrative Drift Log</h3>
-        <pre>{narrative}</pre>
-      </div>
-
-      {vaultAccess ? (
-        <div className="vault-data">🔐 Vault accessed. Contents decrypted.</div>
-      ) : (
-        <button onClick={requestVaultAccess}>Request Vault Access</button>
+      <p><strong>Participants:</strong> {(roomData.participants || []).length}</p>
+      {isDraft && (
+        <button onClick={mintDraftToChain}>Mint to Chain</button>
       )}
+      {/* Render more controls as needed */}
     </div>
   );
 };
