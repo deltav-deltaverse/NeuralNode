@@ -1,5 +1,7 @@
 # DeltaVerse
 
+DeltaVerse (c) PYTHAI
+
 Decentralised Cryptoverse MetaDAO — AI-reactive BubbleRooms powered by NeuralNode.
 
 ## What This Is
@@ -19,6 +21,7 @@ This is not a static virtual world. Rooms Spawn Emergences, Seeds mutate through
 | `EmergenceTraits` | On-chain trait accrual — Intelligence, Knowledge, Wisdom, Resonance, Adaptability, Coherence |
 | `SeedRegistry` | Agent Seed propagation — genesis, spawn, mutate, lineage ancestry |
 | `SwarmGovernance` | Typed proposals (SPAWN/MUTATE/INTERACT/GOVERN/CUSTOM), timed voting, consensus→trait feedback |
+| `TombRegistry` | Programmable encrypted vaults — TOMB/CHEST/SAFETYDEPOSITBOX/TREASURE/SECRET/CUSTOM with oracle consent |
 
 ## Frontend (React + Vite + TypeScript)
 
@@ -31,9 +34,11 @@ This is not a static virtual world. Rooms Spawn Emergences, Seeds mutate through
 | Traits | SVG radar chart + trait bars + Lineage tree visualization |
 | Seeds | Browse, create, spawn, and inspect Seeds with ancestry chains |
 | Govern | Typed proposals, FOR/AGAINST voting, deadline resolution |
-| Agents | 5 founding agent seeds with trait visualization |
+| Vaults | Create/manage encrypted vaults with oracle consent (dyne.org/tomb) |
+| Vision | All 8 minted NFTs as .prompt with blockchain verify links |
+| Agents | 6 founding agent seeds with trait visualization |
 
-MetaMask integration via ethers.js v6. Production build: **484KB** (4.8% of 10MB IPFS budget).
+MetaMask integration via ethers.js v6. Production build: **516KB** (5.1% of 10MB IPFS budget).
 
 ## Agent System
 
@@ -60,11 +65,27 @@ MetaMask integration via ethers.js v6. Production build: **484KB** (4.8% of 10MB
 | Convergence | Seed composed from two-room Interaction |
 | Wisdom | Class earned through Lineage depth + Consensus |
 
-## Tests (30/30 pass)
+## Vault System (dyne.org/tomb)
+
+Programmable encrypted volumes with oracle consent and key separation.
+
+| Class | Tradeable | Use |
+|-------|-----------|-----|
+| TOMB | Soulbound | Permanent archive, locked to room |
+| CHEST | Free | Portable container between rooms |
+| SAFETYDEPOSITBOX | Conditional | Oracle consent required to transfer |
+| TREASURE | Discoverable | Found by meeting trait conditions |
+| SECRET | After reveal | Hidden until unlocked |
+| CUSTOM | User-defined | Any name (Pandora's Box, etc.) |
+
+Oracles: TIME, IDENTITY, SWARM, CONDITION — all must be satisfied (AND logic).
+
+## Tests (44/44 pass)
 
 - 17 unit tests — all contracts
 - 9 fuzz tests — 256 runs each
 - 4 invariant tests — 128,000 calls each
+- 14 tomb/vault tests — all classes, oracles, transfers
 
 ```bash
 forge test -vv

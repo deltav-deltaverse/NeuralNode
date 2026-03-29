@@ -108,6 +108,7 @@ contract FuzzTest is Test {
     function testFuzz_MintGenesis_UniqueAddresses(address recipient) public {
         vm.assume(recipient != address(0));
         vm.assume(uint160(recipient) > 10); // avoid precompiles
+        vm.assume(recipient.code.length == 0); // exclude contracts (ERC721Receiver check)
         vm.startPrank(deployer);
         sbt.mintGenesis(recipient, "ipfs://fuzz");
         assertEq(sbt.ownerOf(1), recipient);

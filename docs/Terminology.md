@@ -19,6 +19,16 @@ Succinct single-word references that include the action where possible.
 | **Resonance** | How strongly a Seed influences other Seeds |
 | **Adaptability** | Mutation success rate across Spawns |
 | **Coherence** | Consistency of tone across Lineage |
+| **Tomb** | Soulbound encrypted volume, non-tradeable, permanent archive |
+| **Chest** | Tradeable encrypted container, portable between rooms |
+| **SafetyDepositBox** | Conditional-trade vault requiring oracle consent |
+| **Treasure** | Discoverable vault found by meeting conditions |
+| **Secret** | Hidden vault, existence concealed until reveal |
+| **Oracle** | Consent gate — time, identity, swarm, or condition |
+| **Seal** | Lock a vault, resetting oracle consent |
+| **Reveal** | Unlock a Secret, making it visible and transferable |
+| **Revoke** | Permanently destroy access to a vault |
+| **Genesis** | NFT #1 — root Origin of all Seeds (on-chain provenance) |
 
 ## Rank Hierarchy
 
@@ -35,3 +45,6 @@ Succinct single-word references that include the action where possible.
 - Votes never just "pass/fail" — they **crystallize Consensus**
 - Traits never get "assigned" — they **emerge through Lineage**
 - Rooms never "connect" — they **Interact** and produce **Convergence**
+- Encrypted files are never just "locked" — they are **Sealed** with **Oracle** consent
+- Tradeable encrypted files are **Chests**, non-tradeable are **Tombs**
+- A Tomb is created with `tomb` (dyne.org/tomb), stored as `storageCID`, key stored separately

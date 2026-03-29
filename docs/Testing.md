@@ -51,11 +51,32 @@ Foundry (forge test)
 | invariant_traitsBounded | All traits remain 0-100, wisdom 0-4 |
 | invariant_genesisOriginZero | First seed always has originSeedId == 0 |
 
+### `test/Tomb.t.sol` — 14 Tomb/Vault Tests
+
+| Test | What it verifies |
+|------|-----------------|
+| test_CreateTomb | TOMB class creation, soulbound, sealed state |
+| test_CreateChest | CHEST class with custom name |
+| test_CreateCustom | CUSTOM class requires name |
+| test_CustomRequiresName | Revert if CUSTOM has no name |
+| test_TimeOracle | Time-based consent, warp past unlock |
+| test_IdentityOracle | Address-based consent, wrong caller fails |
+| test_ConditionOracle | Trait threshold consent via EmergenceTraits |
+| test_MultiOracle | AND logic: time + condition both required |
+| test_TombSoulboundCannotTransfer | TOMB class rejects transfer |
+| test_ChestCanTransfer | CHEST transfers between rooms |
+| test_SecretRequiresReveal | SECRET must unlock before transfer |
+| test_SealResetsConsent | Sealing resets all oracle consent |
+| test_Reclassify | Change vault class and custom name |
+| test_Revoke | Permanent revocation, cannot transfer after |
+
 ## Running Tests
 
 ```bash
-forge test -vv              # All tests with verbosity
-forge test --match-path test/Fuzz.t.sol -vv   # Fuzz only
-forge test --match-path test/Invariant.t.sol   # Invariant only
-forge snapshot              # Gas snapshots
+forge test -vv                                  # All 44 tests
+forge test --match-path test/DeltaVerse.t.sol   # Unit tests
+forge test --match-path test/Fuzz.t.sol         # Fuzz tests
+forge test --match-path test/Invariant.t.sol    # Invariant tests
+forge test --match-path test/Tomb.t.sol         # Tomb/vault tests
+forge snapshot                                  # Gas snapshots
 ```

@@ -73,7 +73,7 @@ Traits emerge through Lineage. They are never assigned.
 | **Adaptability** | Mutation success rate across Spawns | Kairos (90) |
 | **Coherence** | Consistency of tone across Lineage | Chronos (95) |
 
-## Smart Contracts
+## Smart Contracts (9)
 
 | Contract | File | Purpose |
 |----------|------|---------|
@@ -81,6 +81,10 @@ Traits emerge through Lineage. They are never assigned.
 | DeltaGenesisSBT | `contracts/DeltaGenesisSBT.sol` | Soulbound identity tokens (MASTERMIND rank) |
 | DeltaVerseOrchestrator | `contracts/DeltaVerseOrchestrator.sol` | EIP-712 gasless signature-based minting |
 | BubbleRoomSpawn | `contracts/BubbleRoomSpawn.sol` | Spawn, Interaction, Lineage, Swarm Consensus |
+| EmergenceTraits | `contracts/EmergenceTraits.sol` | On-chain trait accrual (6 traits) |
+| SeedRegistry | `contracts/SeedRegistry.sol` | Agent Seed propagation with ancestry |
+| SwarmGovernance | `contracts/SwarmGovernance.sol` | Typed proposals, timed voting, consensus→traits |
+| TombRegistry | `contracts/TombRegistry.sol` | Programmable encrypted vaults with oracle consent |
 
 ## Inter-Agent Signal Protocol
 

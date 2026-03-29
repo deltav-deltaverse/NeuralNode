@@ -108,7 +108,7 @@ export function calculateTraits(seed: AgentSeed): EmergenceTraits {
 }
 
 /// Genesis Seed ID — rooted in NFT #1 on Polygon
-/// DELTAVERSE (c) TNT (tnt.exchange)
+/// DeltaVerse (c) PYTHAI
 const GENESIS_ID = 'seed:genesis:polygon:0x024b464ec595F20040002237680026bf006e8F90:1';
 
 const GENESIS_SOURCE: OnChainSource = {

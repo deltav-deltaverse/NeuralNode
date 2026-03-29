@@ -1,5 +1,5 @@
 /// Genesis Configuration — sourced from on-chain NFT metadata
-/// DELTAVERSE (c) TNT (tnt.exchange)
+/// DeltaVerse (c) PYTHAI
 /// The iconic first DELTA VERSE concept minted on Polygon
 /// https://polygonscan.com/token/0x024b464ec595f20040002237680026bf006e8f90
 
@@ -21,7 +21,7 @@ export interface MintedNFT {
 export const GENESIS_CONTRACT = '0x024b464ec595F20040002237680026bf006e8F90';
 export const THRUST_CONTRACT = '0x67CF0dD25F023746BFAc6EDcd9D04ea77eB19129';
 export const OWNER_ADDRESS = '0xbC62D5e6e3555438061a3D12b7Cd94AaBEe07346';
-export const COPYRIGHT = 'DELTAVERSE (c) TNT (tnt.exchange)';
+export const COPYRIGHT = 'DeltaVerse (c) PYTHAI';
 export const POLYGONSCAN_BASE = 'https://polygonscan.com/token';
 export const OPENSEA_BASE = 'https://opensea.io/item/polygon';
 export const IPFS_GATEWAY = 'https://ipfs.io/ipfs';

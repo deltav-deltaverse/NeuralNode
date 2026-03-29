@@ -36,7 +36,7 @@ contract DeployDeltaVerse is Script {
 
         // Phase 5: Register founding agent seeds
         // Seed #1: GENESIS — NFT #1 on Polygon (0x024b464ec595F20040002237680026bf006e8F90, Token 1)
-        // DELTAVERSE (c) TNT (tnt.exchange)
+        // DeltaVerse (c) PYTHAI
         // IPFS: ipfs://bafybeihax6prz6r6nhoib4i7hxns3avrpfjzikkvfhdlbfauvl4vtn2jjy/1
         uint256 genesisSeedId = seedRegistry.createGenesisSeed(
             "The Delta Verse: A Fluid Dynamic Between Participants and AI. An innovative and immersive creative realm where the boundaries between participants and artificial intelligence seamlessly blur, giving rise to imaginariums that bridge, evolve, and transform dynamic environments. Participants are active co-creators. Environments are fluid. AI responds in real-time. DeltaVerse stands where the simplicity of language meets the complexity of blockchain.",
