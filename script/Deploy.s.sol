@@ -9,6 +9,7 @@ import "../contracts/BubbleRoomSpawn.sol";
 import "../contracts/EmergenceTraits.sol";
 import "../contracts/SeedRegistry.sol";
 import "../contracts/SwarmGovernance.sol";
+import "../contracts/TombRegistry.sol";
 
 contract DeployDeltaVerse is Script {
     function run() external {
@@ -29,6 +30,9 @@ contract DeployDeltaVerse is Script {
 
         // Phase 4: Governance
         SwarmGovernance governance = new SwarmGovernance(address(bubbleRoom), address(traits));
+
+        // Phase 4b: Programmable Encrypted Vaults (inspired by dyne.org/tomb)
+        TombRegistry tombRegistry = new TombRegistry(address(bubbleRoom), address(genesisSBT), address(traits));
 
         // Phase 5: Register founding agent seeds
         // Seed #1: GENESIS — NFT #1 on Polygon (0x024b464ec595F20040002237680026bf006e8F90, Token 1)
@@ -76,6 +80,7 @@ contract DeployDeltaVerse is Script {
         console.log("EmergenceTraits:        ", address(traits));
         console.log("SeedRegistry:           ", address(seedRegistry));
         console.log("SwarmGovernance:        ", address(governance));
+        console.log("TombRegistry:           ", address(tombRegistry));
         console.log("=== Genesis + 5 Agent Seeds Registered ===");
         console.log("Genesis Seed #1 sourced from NFT #1: Polygon 0x024b464ec595F20040002237680026bf006e8F90");
     }

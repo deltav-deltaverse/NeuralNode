@@ -11,12 +11,13 @@ import LineageTree from './components/LineageTree';
 import GovernancePanel from './components/GovernancePanel';
 import SeedBrowser from './components/SeedBrowser';
 import MintedVision from './components/MintedVision';
+import VaultManager from './components/VaultManager';
 import { type DeltaRoomDraft } from './engine/deltaRoomEngine';
 import { AGENT_SEEDS } from './engine/agentSeed';
 import { GENESIS_NFT, COPYRIGHT } from './config/genesis';
 import './styles/app.css';
 
-type View = 'home' | 'explore' | 'create' | 'spawn' | 'interact' | 'traits' | 'seeds' | 'governance' | 'vision' | 'drafts' | 'agents';
+type View = 'home' | 'explore' | 'create' | 'spawn' | 'interact' | 'traits' | 'seeds' | 'governance' | 'vaults' | 'vision' | 'drafts' | 'agents';
 
 // Contract addresses - update after deployment
 const BUBBLE_ROOM_ADDRESS = import.meta.env.VITE_BUBBLE_ROOM_ADDRESS || '';
@@ -25,6 +26,7 @@ const SPAWN_ADDRESS = import.meta.env.VITE_SPAWN_ADDRESS || '';
 const TRAITS_ADDRESS = import.meta.env.VITE_TRAITS_ADDRESS || '';
 const SEED_REGISTRY_ADDRESS = import.meta.env.VITE_SEED_REGISTRY_ADDRESS || '';
 const GOVERNANCE_ADDRESS = import.meta.env.VITE_GOVERNANCE_ADDRESS || '';
+const TOMB_ADDRESS = import.meta.env.VITE_TOMB_ADDRESS || '';
 
 function AppContent() {
   const { connected } = useWallet();
@@ -51,6 +53,7 @@ function AppContent() {
           <button className={view === 'traits' ? 'active' : ''} onClick={() => setView('traits')}>Traits</button>
           <button className={view === 'seeds' ? 'active' : ''} onClick={() => setView('seeds')}>Seeds</button>
           <button className={view === 'governance' ? 'active' : ''} onClick={() => setView('governance')}>Govern</button>
+          <button className={view === 'vaults' ? 'active' : ''} onClick={() => setView('vaults')}>Vaults</button>
           <button className={view === 'vision' ? 'active' : ''} onClick={() => setView('vision')}>Vision</button>
           <button className={view === 'drafts' ? 'active' : ''} onClick={() => setView('drafts')}>Drafts</button>
           <button className={view === 'agents' ? 'active' : ''} onClick={() => setView('agents')}>Agents</button>
@@ -195,6 +198,12 @@ function AppContent() {
         {view === 'governance' && (
           <div className="governance-view">
             <GovernancePanel governanceAddress={GOVERNANCE_ADDRESS} />
+          </div>
+        )}
+
+        {view === 'vaults' && (
+          <div className="vaults-view">
+            <VaultManager tombAddress={TOMB_ADDRESS} />
           </div>
         )}
 

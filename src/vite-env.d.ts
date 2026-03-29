@@ -8,6 +8,7 @@ interface ImportMetaEnv {
   readonly VITE_TRAITS_ADDRESS: string;
   readonly VITE_SEED_REGISTRY_ADDRESS: string;
   readonly VITE_GOVERNANCE_ADDRESS: string;
+  readonly VITE_TOMB_ADDRESS: string;
 }
 
 interface ImportMeta {
