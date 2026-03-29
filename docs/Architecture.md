@@ -145,31 +145,57 @@ CREATE (sealed) → ADD ORACLES → EVALUATE CONSENT → UNLOCK → USE → SEAL
 
 All seeds descend from NFT #1 (Genesis Vision).
 
-| Agent | Seed ID | Tone | Wisdom | On-chain Source |
-|-------|---------|------|--------|-----------------|
-| GENESIS | 1 | Visionary | ORACLE | Polygon 0x024b...8F90 Token 1 |
-| MASTERMIND | 2 | Commanding | ORACLE | Polygon 0x024b...8F90 Token 3 |
+| Seed | ID | Tone | Wisdom | NFT Source |
+|------|----|------|--------|------------|
+| GENESIS | 1 | Visionary | ORACLE | NFT #1 DELTA VERSE |
+| MASTERMIND | 2 | Commanding | ORACLE | NFT #3 DeltaVerse Engine |
 | DELTAVERSE | 3 | Visionary | TRANSCENDENT | — |
 | CHRONOS | 4 | Disciplined | CONVERGENT | — |
 | KAIROS | 5 | Electric | CONVERGENT | — |
 | BUILDER | 6 | Resolute | CONVERGENT | — |
+| ENGINE | 7 | Harmonic | TRANSCENDENT | NFT #3 DeltaVerse Engine |
+| WEAVER | 8 | Ethereal | TRANSCENDENT | NFT #4 Cypherian Weaver |
+| THRUST | 9 | Propulsive | CONVERGENT | NFT #5 THRUST |
+| THRUST1000 | 10 | Bold | EMERGENT | NFT #6 THRUST1000 |
+| ROCKET | 11 | Exponential | EMERGENT | NFT #7 DeltaV THRUST rocket |
+| GUIDE | 12 | Patient | CONVERGENT | NFT #8 investors guide |
 
-## Frontend (12 Views, 516KB build)
+## Room Presets
+
+| Preset | Room Type | Default Vault | Tone |
+|--------|-----------|---------------|------|
+| BOARDROOM | DELTA | CHEST (tradeable) | Commanding |
+| DOJO | DELTA | TOMB (soulbound) | Disciplined |
+| TREASURY | VAULT | SAFETYDEPOSITBOX | Secure |
+| ARENA | EPHEMERAL | TREASURE | Electric |
+| SANCTUM | TIMELOCKED | SECRET | Ethereal |
+
+## Aetheric Codex Framework
+
+NFT #4 contains binary-encoded executable prompts:
+- VISUALIZE: Cypherian Weaver within the Etherwave Node
+- GENERATE: Weaver's Scepter powered by the Aetheric Codex Framework
+
+## Unstoppable Domains (8)
+
+deltaverse.dao, deltavthrust.wallet, deltavthrust.blockchain, thrustchain.blockchain, build.deltavthrust.nft, pay.deltavthrust.wallet, web3.deltavthrust.wallet, abc.deltavthrust.nft
+
+## Frontend (12 Views, 524KB build)
 
 | View | Purpose |
 |------|---------|
-| Home | Genesis vision from NFT #1, room type cards |
+| Home | Genesis vision from NFT #1, provenance links |
 | Explore | Room lookup by ID with AI metadata |
-| Create | EIP-712 gasless draft signing |
+| Create | EIP-712 gasless draft signing with 5 room presets |
 | Spawn | Origin→Emergence with Agent Seed injection |
 | Interact | Room-to-room Convergence, composed seeds |
 | Traits | SVG radar chart + trait bars + Lineage tree |
 | Seeds | Browse, create, spawn seeds with ancestry chains |
 | Govern | Typed proposals, FOR/AGAINST voting, resolve |
-| Vaults | Create/inspect/unlock/seal/revoke encrypted vaults with oracles |
+| Vaults | Create/manage encrypted vaults with oracle consent |
 | Vision | All 8 minted NFTs as .prompt with blockchain verify links |
 | Drafts | Local draft management, mint-to-chain |
-| Agents | 6 founding seeds with trait visualization |
+| Agents | 12 seeds + trait viz + Aetheric Codex binary decoder |
 
 ## Test Suite (44 tests)
 

@@ -37,6 +37,23 @@
 | Chronos | `Chronos.agent` | Sequential time, sustained operations, Spawn cadence | Disciplined | CONVERGENT |
 | Kairos | `Kairos.agent` | Opportune moment recognition, Convergence detection | Electric | CONVERGENT |
 
+## All Seeds (12 — from 8 on-chain NFTs)
+
+| Seed | Tone | Wisdom | NFT Source |
+|------|------|--------|------------|
+| GENESIS | Visionary | ORACLE | #1 DELTA VERSE |
+| MASTERMIND | Commanding | ORACLE | #3 DeltaVerse Engine |
+| DELTAVERSE | Visionary | TRANSCENDENT | — |
+| CHRONOS | Disciplined | CONVERGENT | — |
+| KAIROS | Electric | CONVERGENT | — |
+| BUILDER | Resolute | CONVERGENT | — |
+| ENGINE | Harmonic | TRANSCENDENT | #3 DeltaVerse Engine (369, Tesla) |
+| WEAVER | Ethereal | TRANSCENDENT | #4 Cypherian Weaver (binary-encoded) |
+| THRUST | Propulsive | CONVERGENT | #5 THRUST (DVG Protocol) |
+| THRUST1000 | Bold | EMERGENT | #6 THRUST1000 (1000% APY) |
+| ROCKET | Exponential | EMERGENT | #7 BROBOT BRAI, 22000 threshold |
+| GUIDE | Patient | CONVERGENT | #8 Chronos wisdom on-chain |
+
 ## DeltaVerse Terminology
 
 | Term | Definition |
@@ -98,18 +115,21 @@ Chronos → Builder:     MAINTAIN, COMPOUND
 All → DeltaVerse:      TRAIT_CHANGE, SEED_MUTATION, CONSENSUS
 ```
 
-## Frontend
+## Frontend (12 views, 524KB build)
 
-- React + Vite + TypeScript (~464KB production build)
+- React + Vite + TypeScript
 - MetaMask integration via ethers.js v6
 - EIP-712 draft signing (gasless room creation)
-- Agent Seed system with 5 founding seeds and trait visualization
-- Spawn and Interaction views for inter-room operations
+- 12 agent seeds with trait radar visualization
+- Aetheric Codex binary encoder/decoder
+- 5 room presets (BOARDROOM/DOJO/TREASURY/ARENA/SANCTUM)
+- Vault manager with oracle consent (dyne.org/tomb)
+- Minted Vision gallery with blockchain verify links
 
 ## Deployment
 
 - Domain: `deltaverse.dao` (Unstoppable Domains)
-- Storage: IPFS (10MB budget, current usage ~4.6%)
+- Storage: IPFS (10MB budget, current build 524KB = 5.2%)
 - Controller: `DeltaVerseDAO/deltaversecontroller` (multisig)
 - Current hash: `QmTPjokgXv7MQXh6qXzgagDrw2Buqsr52YhttKrn3smrHr`
 
@@ -125,10 +145,11 @@ All → DeltaVerse:      TRAIT_CHANGE, SEED_MUTATION, CONSENSUS
 ## Development Workflow
 
 ```bash
-npm install        # Install dependencies
-npm run dev        # Development server
-npm run compile    # Compile smart contracts
-npm run build      # Build for IPFS deployment
+npm install          # Install dependencies
+forge build          # Compile 9 contracts
+forge test -vv       # Run 44 tests
+npm run dev          # Development server
+npm run build        # Build for IPFS (524KB)
 ```
 
 ## Audit Status
