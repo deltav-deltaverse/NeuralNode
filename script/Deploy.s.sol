@@ -74,10 +74,31 @@ contract DeployDeltaVerse is Script {
             "Harmonic"
         );
         // Seed #8: WEAVER — NFT #4 (Cypherian Weaver, binary-encoded executable prompts)
-        // Contains Aetheric Codex Framework and Etherwave Node references
         seedRegistry.spawnSeed(genesisSeedId,
             "Visualize Cypherian Weaver, master coder and quantum weaver from the cybernetic realms. Generate the Scepter rooted in the Etherwave Node, powered by the Aetheric Codex Framework.",
             "Ethereal"
+        );
+
+        // Seeds #9-12: DeltaV THRUST collection (0x67CF...9129)
+        // Seed #9: THRUST — NFT #5 (Launch stage 4, DVG Protocol)
+        uint256 thrustSeedId = seedRegistry.spawnSeed(genesisSeedId,
+            "DeltaV THRUST launch stage 4. 1000% APY. PULSAR, HANDSHAKE, AFTERBURNER, SLINGSHOT, WARPDRIVE. Forward momentum and pioneering spirit.",
+            "Propulsive"
+        );
+        // Seed #10: THRUST1000 — NFT #6
+        seedRegistry.spawnSeed(thrustSeedId,
+            "Gateway to unprecedented returns. A powerhouse offering 1000% APY. Designed for the bold and visionary.",
+            "Bold"
+        );
+        // Seed #11: ROCKET — NFT #7 (Exponential growth, BROBOT BRAI)
+        seedRegistry.spawnSeed(thrustSeedId,
+            "Unleashing exponential growth and compound interest. Auto stake auto reward. Holdings compound every 18 minutes. BROBOT BRAI. 22000 THRUST threshold.",
+            "Exponential"
+        );
+        // Seed #12: GUIDE — NFT #8 (Chronos wisdom on-chain)
+        seedRegistry.spawnSeed(thrustSeedId,
+            "Patience is key. Buy low sell high. Double and sell half. Continuous learning and adaptation. Chronos wisdom minted on-chain.",
+            "Patient"
         );
 
         vm.stopBroadcast();
@@ -92,7 +113,7 @@ contract DeployDeltaVerse is Script {
         console.log("SeedRegistry:           ", address(seedRegistry));
         console.log("SwarmGovernance:        ", address(governance));
         console.log("TombRegistry:           ", address(tombRegistry));
-        console.log("=== Genesis + 7 Seeds Registered (5 agents + Engine + Weaver) ===");
+        console.log("=== 12 Seeds Registered: Genesis + 7 DELTA VERSE + 4 THRUST ===");
         console.log("Genesis Seed #1 sourced from NFT #1: Polygon 0x024b464ec595F20040002237680026bf006e8F90");
     }
 }

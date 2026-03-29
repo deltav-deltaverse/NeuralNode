@@ -165,3 +165,49 @@ export const GENESIS_NFT = MINTED_NFTS[0];
 export function getIpfsGatewayUrl(ipfsUri: string): string {
   return ipfsUri.replace('ipfs://', `${IPFS_GATEWAY}/`);
 }
+
+/// Unstoppable Domains held by owner address (on-chain NFTs, Polygon)
+export const UNSTOPPABLE_DOMAINS = [
+  { name: 'deltaverse.dao', url: 'https://unstoppabledomains.com/d/deltaverse.dao', role: 'Primary deployment domain' },
+  { name: 'deltavthrust.wallet', subdomain: 'nft.deltavthrust.wallet', role: 'NFT wallet' },
+  { name: 'deltavthrust.blockchain', role: 'Blockchain identity' },
+  { name: 'thrustchain.blockchain', role: 'Chain identity' },
+  { name: 'build.deltavthrust.nft', role: 'Builder identity' },
+  { name: 'pay.deltavthrust.wallet', role: 'Payment wallet' },
+  { name: 'web3.deltavthrust.wallet', role: 'Web3 wallet' },
+  { name: 'abc.deltavthrust.nft', role: 'NFT subdomain' },
+] as const;
+
+/// Room type presets mapping to BubbleRoomV4 types
+export const ROOM_PRESETS = {
+  BOARDROOM: {
+    roomType: 9, // DELTA
+    description: 'Governance room. Tradeable vaults (Chests). Swarm consensus for decisions.',
+    defaultTone: 'Commanding',
+    vaultClass: 'CHEST' as const,
+  },
+  DOJO: {
+    roomType: 9, // DELTA
+    description: 'Practice room. Soulbound vaults (Tombs). Knowledge accrual through repetition.',
+    defaultTone: 'Disciplined',
+    vaultClass: 'TOMB' as const,
+  },
+  TREASURY: {
+    roomType: 8, // VAULT
+    description: 'Encrypted storage. SafetyDepositBox vaults. Oracle-gated access.',
+    defaultTone: 'Secure',
+    vaultClass: 'SAFETYDEPOSITBOX' as const,
+  },
+  ARENA: {
+    roomType: 2, // EPHEMERAL
+    description: 'Competition space. Treasure vaults discoverable by winners.',
+    defaultTone: 'Electric',
+    vaultClass: 'TREASURE' as const,
+  },
+  SANCTUM: {
+    roomType: 7, // TIMELOCKED
+    description: 'Time-locked secret space. Secret vaults revealed on schedule.',
+    defaultTone: 'Ethereal',
+    vaultClass: 'SECRET' as const,
+  },
+} as const;

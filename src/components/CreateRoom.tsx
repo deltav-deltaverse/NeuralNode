@@ -7,6 +7,9 @@ import {
   ROOM_TYPES,
   type DeltaRoomDraft,
 } from '../engine/deltaRoomEngine';
+import { ROOM_PRESETS } from '../config/genesis';
+
+const PRESET_KEYS = Object.keys(ROOM_PRESETS) as (keyof typeof ROOM_PRESETS)[];
 
 interface Props {
   orchestratorAddress: string;
@@ -63,6 +66,22 @@ export default function CreateRoom({ orchestratorAddress, onDraftCreated }: Prop
   return (
     <div className="create-room">
       <h2>Create BubbleRoom Draft</h2>
+
+      <div className="preset-grid">
+        {PRESET_KEYS.map((key) => {
+          const preset = ROOM_PRESETS[key];
+          return (
+            <button key={key} className="preset-btn" onClick={() => {
+              setRoomType(ROOM_TYPES[preset.roomType]);
+              setTone(preset.defaultTone);
+              setTheme(key.charAt(0) + key.slice(1).toLowerCase());
+            }}>
+              <strong>{key}</strong>
+              <span>{preset.description}</span>
+            </button>
+          );
+        })}
+      </div>
 
       <div className="form-field">
         <label>Theme</label>
