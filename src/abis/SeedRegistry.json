@@ -1,0 +1,16 @@
+[
+  "function createGenesisSeed(string prompt, string tone, bool evolves) external returns (uint256)",
+  "function spawnSeed(uint256 originSeedId, string mutation, string tone) external returns (uint256)",
+  "function bindSeedToRoom(uint256 roomId, uint256 seedId) external",
+  "function mutateSeed(uint256 seedId, string newPrompt, string reason) external",
+  "function getLineageDepth(uint256 seedId) external view returns (uint256)",
+  "function getLineage(uint256 seedId) external view returns (uint256[])",
+  "function getAncestors(uint256 seedId) external view returns (uint256[])",
+  "function seeds(uint256) external view returns (string prompt, string tone, bool evolves, uint256 originSeedId, uint256 spawnCount, uint256 timestamp, address creator, bool exists)",
+  "function roomSeed(uint256) external view returns (uint256)",
+  "function nextSeedId() external view returns (uint256)",
+  "event SeedCreated(uint256 indexed seedId, string prompt, string tone, address creator)",
+  "event SeedSpawned(uint256 indexed originSeedId, uint256 indexed emergenceSeedId, string mutation)",
+  "event SeedBound(uint256 indexed roomId, uint256 indexed seedId)",
+  "event SeedMutated(uint256 indexed seedId, string newPrompt, string reason)"
+]

@@ -1,0 +1,9 @@
+[
+  "function mintGenesis(address recipient, string uri) external",
+  "function hasClaimed(address) external view returns (bool)",
+  "function nextTokenId() external view returns (uint256)",
+  "function ownerOf(uint256 tokenId) external view returns (address)",
+  "function tokenURI(uint256 tokenId) external view returns (string)",
+  "function soulbound(uint256) external view returns (bool)",
+  "function burn(uint256 tokenId) external"
+]

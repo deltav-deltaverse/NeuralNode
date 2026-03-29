@@ -1,0 +1,95 @@
+{
+  "identity": {
+    "agent": "Builder",
+    "version": "1.0.0",
+    "created": "2026-03-28",
+    "architect": {
+      "name": "Professor Codephreak",
+      "legal_name": "Gregory L"
+    }
+  },
+  "blockchain": {
+    "token": {
+      "name": "THRUST",
+      "contract": "0x969F60Bfe17962E0f061B434596545C7b6Cd6Fc4",
+      "type": "ERC20",
+      "buy_tax": "5%",
+      "sell_tax": "5%",
+      "max_transaction": "1000000",
+      "rewards": "auto-staking high APY"
+    }
+  },
+  "deployment": {
+    "domain": "deltaverse.dao",
+    "storage": "IPFS",
+    "budget_mb": 10,
+    "current_ipfs_hash": "QmTPjokgXv7MQXh6qXzgagDrw2Buqsr52YhttKrn3smrHr",
+    "controller": "DeltaVerseDAO/deltaversecontroller",
+    "source": "deltastorage/deltaverse.dao"
+  },
+  "organizations": {
+    "deltav-deltaverse": {
+      "url": "https://github.com/deltav-deltaverse",
+      "role": "core",
+      "repos": 90,
+      "domains": ["AI/ML", "3D/WebGL", "NFT", "Agents", "Blockchain", "GameEngines"]
+    },
+    "deltabridge": {
+      "url": "https://github.com/deltabridge",
+      "role": "bridge",
+      "repos": 90,
+      "domains": ["CrossChain", "DeFi", "Cosmos/IBC", "ZK", "IPFS"]
+    },
+    "deltastorage": {
+      "url": "https://github.com/deltastorage",
+      "role": "storage",
+      "repos": 55,
+      "domains": ["IPFS", "Domains", "Zilliqa", "Governance", "Identity"]
+    },
+    "deltaloans": {
+      "url": "https://github.com/deltaloans",
+      "role": "defi",
+      "repos": 45,
+      "domains": ["Lending", "FlashLoans", "Vaults", "Liquidation", "Gold"]
+    },
+    "DeltaVD": {
+      "url": "https://github.com/DeltaVD",
+      "role": "visual",
+      "repos": 80,
+      "domains": ["Cesium", "WebGL", "Unity/Unreal", "glTF", "SmartContracts"]
+    },
+    "DeltaVerseDAO": {
+      "url": "https://github.com/DeltaVerseDAO",
+      "role": "governance",
+      "repos": 70,
+      "domains": ["DAO", "Multisig", "Voting", "Distribution", "Identity"]
+    }
+  },
+  "shared_dependencies": [
+    {"repo": "deltasearch", "orgs": ["deltav-deltaverse", "deltabridge"]},
+    {"repo": "pack-protocol", "orgs": ["deltav-deltaverse", "DeltaVD", "deltabridge"]},
+    {"repo": "nftpacks-contracts", "orgs": ["deltav-deltaverse", "DeltaVD", "DeltaVerseDAO"]},
+    {"repo": "daoit", "orgs": ["deltabridge", "DeltaVerseDAO"]},
+    {"repo": "proxy-contract-wallet-example", "orgs": ["deltav-deltaverse", "DeltaVD", "DeltaVerseDAO"]},
+    {"repo": "safe-modules", "orgs": ["deltav-deltaverse", "DeltaVerseDAO"]},
+    {"repo": "Saleable", "orgs": ["deltav-deltaverse", "DeltaVD"]},
+    {"repo": "hyperdrive", "orgs": ["deltabridge", "DeltaVerseDAO"]},
+    {"repo": "3box-js", "orgs": ["DeltaVD", "DeltaVerseDAO"]}
+  ],
+  "agents": [
+    "DeltaVerse.agent",
+    "Chronos.agent",
+    "Kairos.agent",
+    "Builder.agent"
+  ],
+  "files": {
+    "agent": "builder.agent",
+    "prompt": "builder.prompt",
+    "identity": "builder.identity",
+    "credentials": "builder.json"
+  },
+  "medium": {
+    "url": "https://medium.com/@deltaverse",
+    "articles": 10
+  }
+}

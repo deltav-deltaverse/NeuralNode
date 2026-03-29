@@ -1,0 +1,11 @@
+[
+  "function mintRoom(string metadataURI, string theme, string originEvent, address[] initialParticipants, uint8[] roles, bool isPrivate, bool isStable, bool isSoulbound, uint8 roomType, uint256 unlockTime, string storageCID, bool isEncryptedStorage, string aiSeed, string tone, bool evolves) external returns (uint256)",
+  "function getRoomAI(uint256 roomId) external view returns (string aiSeed, string tone, bool evolves)",
+  "function getRoomParticipants(uint256 roomId) external view returns (address[])",
+  "function nextRoomId() external view returns (uint256)",
+  "function ownerOf(uint256 tokenId) external view returns (address)",
+  "function tokenURI(uint256 tokenId) external view returns (string)",
+  "event RoomCreated(uint256 indexed roomId, string theme, uint8 roomType, address creator)",
+  "event ParticipantInvited(uint256 indexed roomId, address invitee, uint8 role)",
+  "event RoomUnlocked(uint256 indexed roomId)"
+]

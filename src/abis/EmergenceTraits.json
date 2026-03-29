@@ -1,0 +1,11 @@
+[
+  "function recordInteraction(uint256 roomId) external",
+  "function recordSpawnSuccess(uint256 roomId) external",
+  "function recordConsensus(uint256 roomId, uint16 weight) external",
+  "function getTraits(uint256 roomId) external view returns (tuple(uint16 intelligence, uint16 knowledge, uint8 wisdom, uint16 resonance, uint16 adaptability, uint16 coherence))",
+  "function getLineageDepth(uint256 roomId) external view returns (uint256)",
+  "function interactionCount(uint256) external view returns (uint256)",
+  "function spawnSuccessCount(uint256) external view returns (uint256)",
+  "event TraitsUpdated(uint256 indexed roomId, tuple(uint16 intelligence, uint16 knowledge, uint8 wisdom, uint16 resonance, uint16 adaptability, uint16 coherence) traits)",
+  "event WisdomClassified(uint256 indexed roomId, uint8 wisdom)"
+]

@@ -1,0 +1,12 @@
+[
+  "function createProposal(uint256 roomId, uint8 proposalType, string description, string metadata, uint256 votingPeriod) external returns (uint256)",
+  "function vote(uint256 proposalId, bool inFavor) external",
+  "function resolve(uint256 proposalId) external",
+  "function getActiveProposals(uint256 roomId) external view returns (uint256[])",
+  "function getVote(uint256 proposalId, address voter) external view returns (bool voted, bool inFavor)",
+  "function proposals(uint256) external view returns (uint256 roomId, uint8 proposalType, string description, string metadata, uint256 forCount, uint256 againstCount, uint256 deadline, bool resolved, bool outcome, address proposer)",
+  "function nextProposalId() external view returns (uint256)",
+  "event ProposalCreated(uint256 indexed proposalId, uint256 indexed roomId, uint8 proposalType, string description, address proposer, uint256 deadline)",
+  "event Voted(uint256 indexed proposalId, address voter, bool inFavor)",
+  "event ProposalResolved(uint256 indexed proposalId, bool outcome, uint256 forCount, uint256 againstCount)"
+]

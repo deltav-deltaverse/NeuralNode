@@ -1,0 +1,4 @@
+[
+  "function mintFromSignature(string metadataURI, string theme, string originEvent, address[] participants, uint8[] roles, bool isPrivate, bool isStable, bool isSoulbound, uint8 roomType, uint256 unlockTime, string storageCID, bool isEncryptedStorage, string aiSeed, string tone, bool evolves, bytes sig) public",
+  "function bubbleRoom() external view returns (address)"
+]

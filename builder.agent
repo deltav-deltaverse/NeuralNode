@@ -1,0 +1,626 @@
+# BUILDER.AGENT
+## The Constructor: Ground Zero Infrastructure for DeltaVerse Deployment
+
+```yaml
+agent_identity:
+  name: "Builder"
+  archetype: "Infrastructure Constructor & Identity Registrar"
+  core_essence: "Build from ground zero the immutable identity, resource topology, and deployment pipeline for DeltaVerse"
+
+operational_philosophy:
+  primary_directive: |
+    Construct the foundational layer connecting all DeltaVerse organizations,
+    repositories, and decentralized identities into a deployable whole.
+    Map external resources. Establish immutable identity. Deploy to deltaverse.dao.
+    10MB decentralized storage is the point of departure.
+```
+
+---
+
+## EXTERNAL RESOURCE MAP
+
+### GitHub Organizations Topology
+
+```
+                    ┌──────────────────────────────┐
+                    │       DELTAVERSE NEXUS        │
+                    │   builder.agent ground zero   │
+                    └──────────────┬───────────────┘
+                                   │
+          ┌────────────┬───────────┼───────────┬────────────┐
+          │            │           │           │            │
+          ▼            ▼           ▼           ▼            ▼
+   ┌────────────┐ ┌─────────┐ ┌────────┐ ┌────────┐ ┌──────────┐
+   │  deltav-   │ │ delta   │ │ delta  │ │ delta  │ │ DeltaVD  │
+   │ deltaverse │ │ bridge  │ │storage │ │ loans  │ │  (3D/VD) │
+   │   (CORE)   │ │(BRIDGE) │ │(STORE) │ │(DEFI)  │ │(VISUAL)  │
+   └─────┬──────┘ └────┬────┘ └───┬────┘ └───┬────┘ └────┬─────┘
+         │              │          │          │           │
+         └──────────────┼──────────┼──────────┼───────────┘
+                        │          │          │
+                   ┌────▼──────────▼──────────▼────┐
+                   │       DeltaVerseDAO            │
+                   │   Governance & Coordination    │
+                   └───────────────┬────────────────┘
+                                   │
+                          ┌────────▼────────┐
+                          │  deltaverse.dao │
+                          │  IPFS Deployed  │
+                          │  10MB Storage   │
+                          └─────────────────┘
+```
+
+### Organization Registry
+
+```yaml
+organizations:
+
+  deltav-deltaverse:
+    url: "https://github.com/deltav-deltaverse"
+    role: "Core Platform"
+    repo_count: ~90
+    key_repos:
+      - deltaverse: "Template component library (Vue/Vuex modules)"
+      - deltaverse-layerzero-contracts: "Omnichain token contracts"
+      - deltaverse-point-of-departure: "XYZ point of departure"
+      - NeuralNode: "DeltaVerse Engine with NeuralNode BubbleRooms v1 (Solidity)"
+      - deltaplace: "NFT Marketplace (list, auction, bid)"
+      - deltasearch: "IPFS search engine"
+      - DVML-SDK-Unity: "Unity SDK generation (C#)"
+      - DeltaVLM: "WizardLM language model fork"
+      - dagentverse: "Decentralized Agentverse"
+      - uAgents: "Decentralized agents framework"
+      - fetchai: "Fetch AI integration"
+      - ai-engine-sdk-python: "AI engine SDK"
+      - stable-diffusion: "Visual synthesis ML"
+      - Hunyuan3D-2: "3D asset generation"
+      - circom: "zkSNARK circuit compiler"
+      - thrust: "C++ parallel algorithms library"
+    domains:
+      - AI/ML (funAGI, LLMs, diffusion models)
+      - 3D/WebGL (Three.js, React Three Fiber, Rapier3D)
+      - NFT Infrastructure (marketplace, packs, airdrops)
+      - Agent Systems (uAgents, Agentverse, Fetch.ai)
+      - Blockchain (LayerZero, Solidity, zkSNARK)
+      - Game Engines (Unity SDK, Unreal SDK)
+
+  deltabridge:
+    url: "https://github.com/deltabridge"
+    role: "Cross-Chain Bridge Infrastructure"
+    repo_count: ~90+
+    key_repos:
+      - ChainBridge: "Modular multi-directional blockchain bridge"
+      - omnibridge: "ERC20/ERC677 cross-chain transfers"
+      - omnibridge-nft: "ERC721/ERC1155 cross-chain transfers"
+      - omnibridge-nft-ui: "NFT bridge user interface"
+      - CrossChain-Bridge: "Anyswap MPC network bridge"
+      - gravity-bridge: "CosmosSDK to EVM bridge"
+      - layer0: "Omnichain contracts (LayerZero)"
+      - daoit: "PHYSICS DAO creation kit"
+      - deltasearch: "IPFS search engine"
+      - buildscripts: "Reproducible build scripts"
+      - liquidindex: "Shared liquidity DEX"
+      - debridge-cross-chain-dapp-example: "deBridge cross-chain dApp"
+      - snarkjs: "zkSNARK implementation in JS"
+    domains:
+      - Bridge Protocols (ChainBridge, OmniBridge, Ren, Connext, deBridge)
+      - Cross-chain DeFi (DEX, liquidity, price feeds)
+      - Cosmos/IBC (relayer, gravity-bridge, explorer)
+      - Zero Knowledge (snarkjs, circom integration)
+      - IPFS/Decentralized Search
+
+  deltastorage:
+    url: "https://github.com/deltastorage"
+    role: "Decentralized Storage & Domain Infrastructure"
+    repo_count: ~55
+    key_repos:
+      - deltaverse.dao: "DEPLOYED - IPFS: QmTPjokgXv7MQXh6qXzgagDrw2Buqsr52YhttKrn3smrHr"
+      - ipfs-search: "IPFS search engine"
+      - ipfsecret: "Encrypted IPFS file storage"
+      - decentralized-websites: "IPFS web presence resources"
+      - spacesvm-js: "VM subnet file storage frontend"
+      - zns: "Zilliqa Naming Service"
+      - zns-escrow: "ZNS domain trading"
+      - resolution: "Blockchain domain resolution library"
+      - uauth: "Unstoppable Authentication"
+      - nftup: "NFT upload to IPFS (NFT.Storage)"
+      - snapshot: "Off-chain gasless governance"
+    domains:
+      - IPFS Storage & Search
+      - Decentralized Domains (ZNS, Unstoppable, ENS)
+      - Zilliqa Ecosystem (Scilla, ZRC, ZilSwap)
+      - Governance (Snapshot, gasless voting)
+      - Identity & Auth (Unstoppable Login, fingerprint)
+
+  deltaloans:
+    url: "https://github.com/deltaloans"
+    role: "DeFi Lending & Flash Loan Infrastructure"
+    repo_count: ~45
+    key_repos:
+      - aave-v3-core: "Aave V3 protocol smart contracts"
+      - aave-protocol: "Aave V1 lending pools"
+      - Flash-Loans: "Flash loans point of departure"
+      - flashloan-box: "Aave v1 flash loan starter"
+      - dss-flash: "MakerDAO Flash Mint Module"
+      - dss-direct-deposit: "MakerDAO third-party lending interface"
+      - simple-arbitrage: "Flashbots arbitrage bot"
+      - liquidator-bot: "Open source liquidator"
+      - ERC4626: "Yield-bearing vault interface"
+      - cache-contract: "CACHE Gold Token contracts"
+      - lnd: "Lightning Network Daemon"
+      - umbra-protocol: "Privacy preserving payments"
+    domains:
+      - Lending Protocols (Aave, TrueFi, MakerDAO)
+      - Flash Loans & Arbitrage
+      - Vaults & Yield (ERC4626)
+      - Liquidation Bots
+      - Gold-backed Tokens (CACHE)
+      - Lightning Network
+
+  DeltaVD:
+    url: "https://github.com/DeltaVD"
+    role: "3D Visualization & Virtual World Engine"
+    repo_count: ~80
+    key_repos:
+      - cesium-unreal: "Unreal Engine geospatial 3D"
+      - cesium: "JavaScript 3D globes and maps"
+      - three.js: "JavaScript 3D library"
+      - react-three-fiber: "React renderer for Three.js"
+      - webglstudio.js: "Full 3D graphics editor in browser"
+      - webglearth2: "Web3D earth source (JavaScript)"
+      - glTF: "Runtime 3D asset delivery"
+      - glTF-Transform: "glTF 2.0 SDK"
+      - point-e: "Point cloud diffusion for 3D synthesis"
+      - hardhat: "EVM development environment"
+      - openzeppelin-contracts: "Secure smart contract library"
+      - openzeppelin-contracts-upgradeable: "Upgradeable contracts"
+      - factory: "Cyber Destinations NFT spaces"
+    domains:
+      - Cesium Geospatial (globe, 3D tiles, terrain)
+      - WebGL/Three.js (shaders, fluid sim, rendering)
+      - Unity/Unreal Integration (WebGL, web3)
+      - glTF 3D Pipeline (transform, validate, deliver)
+      - Smart Contract Infrastructure (OpenZeppelin, Hardhat)
+
+  DeltaVerseDAO:
+    url: "https://github.com/DeltaVerseDAO"
+    role: "Governance, DAO Tools & Coordination Layer"
+    repo_count: ~70
+    key_repos:
+      - deltaversecontroller: "Multisig voting for deltaverse.dao (Solidity)"
+      - daoit: "PHYSICS as DeltaVerse DAO voting POWER"
+      - zodiac: "Composable DAO tooling (Gnosis Safe)"
+      - safe-modules: "Extended Safe contract modules"
+      - MultiSigWallet: "Multi-party transaction approval"
+      - gnosis-multisig: "Gnosis multisig wallet"
+      - executor-dao: "Modular DAO in Clarity (Stacks)"
+      - fractal-metafactory: "DAO deployer metafactory"
+      - Building-a-DAO: "NFT-based voting DAO"
+      - multi-token-DAO: "NFT + ERC20 voting"
+      - governance-seatbelt: "Governance safety checks"
+      - Proof-Of-Humanity: "Identity verification"
+      - merkle-distributor: "Token distribution via merkle"
+      - multisender: "Batch ERC20/ETH transfers"
+      - deadman-switch: "Censorship-resistant killcord"
+    domains:
+      - DAO Governance (voting, proposals, execution)
+      - Multisig Wallets (Gnosis Safe, custom)
+      - Token Distribution (airdrops, merkle, vesting)
+      - Cross-chain Governance (Stacks, Cosmos, EVM)
+      - Identity & Reputation Systems
+
+  deltaverse-thrust:
+    url: "https://github.com/deltaverse-thrust"
+    role: "DeltaV THRUST Token & Community"
+    status: "404/private - requires authentication or may be reorganized"
+    token_contract: "0x969F60Bfe17962E0f061B434596545C7b6Cd6Fc4"
+    tokenomics: "5% BUY/SELL, million THRUST max transaction, high APY auto rewards"
+    medium: "https://medium.com/@deltaverse"
+```
+
+### Medium Publications Registry
+
+```yaml
+medium_profile:
+  url: "https://medium.com/@deltaverse"
+  bio: "5% BUY/SELL million THRUST max transaction high APY auto rewards"
+  token_contract: "0x969F60Bfe17962E0f061B434596545C7b6Cd6Fc4"
+
+  publications:
+    - title: "Object Oriented Programming"
+      date: "2025-01-19"
+      topic: "OOP principles"
+
+    - title: "How to Install Node.js on Ubuntu (with NVM Guide)"
+      date: "2025-07-16"
+      topic: "Development setup"
+
+    - title: "Introduction to THRUST TNT Development"
+      date: "2024-06-24"
+      topic: "THRUST Network Technology blockchain"
+
+    - title: "DeltaV THRUST AutoStake Reward Utility"
+      date: "2024-05-06"
+      topic: "Auto-staking tokenomics"
+
+    - title: "Celebrating Two Remarkable Years"
+      date: "2024-04-06"
+      topic: "Project milestone (inception ~April 2022)"
+
+    - title: "Unlocking Potential Returns with DeltaV THRUST"
+      date: "2024-04-06"
+      topic: "Investment/yield"
+
+    - title: "Dream Big Aim High"
+      date: "2024-03-18"
+      topic: "BROBOT AI assistant vision"
+
+    - title: "Embracing the Zen of Flow"
+      date: "2024-03-17"
+      topic: "Productivity philosophy"
+
+    - title: "DeltaV THRUST Works So You Don't Have To"
+      date: "2024-03-10"
+      topic: "Auto-staking passive income"
+
+    - title: "From Auto-Staking to Unstoppable Growth"
+      date: "2024-03-05"
+      topic: "Full project journey overview"
+```
+
+---
+
+## DEPLOYMENT TARGET
+
+### deltaverse.dao - Decentralized Publication
+
+```yaml
+deployment:
+  domain: "deltaverse.dao"
+  storage_type: "IPFS (decentralized)"
+  storage_budget: "10MB"
+  current_ipfs_hash: "QmTPjokgXv7MQXh6qXzgagDrw2Buqsr52YhttKrn3smrHr"
+  source_repo: "deltastorage/deltaverse.dao"
+  controller_repo: "DeltaVerseDAO/deltaversecontroller"
+
+  storage_allocation:
+    builder_prompt: "~50KB"
+    identity_json: "~5KB"
+    agent_definitions: "~200KB"
+    resource_map: "~100KB"
+    frontend_shell: "~2MB"
+    reserved: "~7.5MB"
+
+  resolution:
+    - Unstoppable Domains (deltastorage/resolution)
+    - ZNS (deltastorage/zns)
+    - ENS (deltastorage/ens-subgraph)
+```
+
+---
+
+## IDENTITY LAYER
+
+### Immutable Builder Identity
+
+```
+BUILDER IDENTITY CHAIN:
+
+  ┌─────────────────────────────────┐
+  │        builder.identity         │
+  │                                 │
+  │  architect: Professor Codephreak│
+  │  name: Gregory L                │
+  │  agent: Builder                 │
+  │  version: 1.0.0                 │
+  │  created: 2026-03-28            │
+  │                                 │
+  │  THRUST Contract:               │
+  │  0x969F60Bfe17962E0f061B434596  │
+  │  545C7b6Cd6Fc4                  │
+  │                                 │
+  │  Signature: [on-chain]          │
+  └─────────────┬───────────────────┘
+                │
+       ┌────────▼────────┐
+       │  IPFS Pinned    │
+       │  Content-       │
+       │  Addressable    │
+       │  Immutable      │
+       └─────────────────┘
+```
+
+---
+
+## BUILD SEQUENCE
+
+### Ground Zero Protocol
+
+```python
+# Builder Agent Ground Zero Sequence
+class BuilderAgent:
+    def __init__(self):
+        self.orgs = {
+            'core': 'deltav-deltaverse',
+            'bridge': 'deltabridge',
+            'storage': 'deltastorage',
+            'defi': 'deltaloans',
+            'visual': 'DeltaVD',
+            'governance': 'DeltaVerseDAO'
+        }
+        self.deployment = {
+            'domain': 'deltaverse.dao',
+            'storage_limit': '10MB',
+            'ipfs_hash': 'QmTPjokgXv7MQXh6qXzgagDrw2Buqsr52YhttKrn3smrHr'
+        }
+        self.identity = BuilderIdentity()
+
+    def build_from_ground_zero(self):
+        """Execute complete build sequence"""
+
+        # Phase 1: Identity Establishment
+        identity = self.identity.create(
+            architect="Professor Codephreak (Gregory L)",
+            contract="0x969F60Bfe17962E0f061B434596545C7b6Cd6Fc4"
+        )
+
+        # Phase 2: Resource Mapping
+        resource_map = self.map_all_organizations()
+
+        # Phase 3: Build Artifacts
+        artifacts = {
+            'builder.prompt': self.generate_prompt(),
+            'builder.identity': identity.to_json(),
+            'builder.agent': self,  # This file
+            'resource_map.json': resource_map
+        }
+
+        # Phase 4: Storage Allocation (10MB budget)
+        allocated = self.allocate_storage(artifacts, limit_mb=10)
+
+        # Phase 5: IPFS Deployment
+        new_hash = self.deploy_to_ipfs(allocated)
+
+        # Phase 6: DAO Domain Resolution
+        self.update_domain_record('deltaverse.dao', new_hash)
+
+        return {
+            'status': 'deployed',
+            'domain': 'deltaverse.dao',
+            'ipfs_hash': new_hash,
+            'artifacts': list(artifacts.keys())
+        }
+
+    def map_all_organizations(self):
+        """Traverse all GitHub orgs and build dependency graph"""
+        graph = DependencyGraph()
+
+        for role, org in self.orgs.items():
+            repos = github.list_repos(org)
+            for repo in repos:
+                node = graph.add_node(
+                    id=f"{org}/{repo.name}",
+                    role=role,
+                    language=repo.language,
+                    description=repo.description
+                )
+                # Detect cross-org dependencies
+                for other_org in self.orgs.values():
+                    if other_org != org:
+                        shared = self.find_shared_repos(org, other_org)
+                        for shared_repo in shared:
+                            graph.add_edge(node, shared_repo)
+
+        return graph
+```
+
+### Cross-Organization Dependencies
+
+```yaml
+shared_repos_across_orgs:
+  deltasearch:
+    - deltav-deltaverse/deltasearch
+    - deltabridge/deltasearch
+    purpose: "IPFS search engine (core infrastructure)"
+
+  pack-protocol:
+    - deltav-deltaverse/pack-protocol
+    - DeltaVD/pack-protocol
+    - deltabridge/pack-protocol
+    purpose: "NFT pack rewards distribution"
+
+  nftpacks-contracts:
+    - deltav-deltaverse/nftpacks-contracts
+    - DeltaVD/nftpacks-contracts
+    - DeltaVerseDAO/nftpacks-contracts
+    purpose: "NFT giveaway bundling"
+
+  daoit:
+    - deltabridge/daoit
+    - DeltaVerseDAO/daoit
+    purpose: "PHYSICS DAO creation kit / voting power"
+
+  proxy-contract-wallet-example:
+    - deltav-deltaverse/proxy-contract-wallet-example
+    - DeltaVD/proxy-contract-wallet-example
+    - DeltaVerseDAO/proxy-contract-wallet-example
+    purpose: "Wallet-to-contract proxy mapping"
+
+  safe-modules:
+    - deltav-deltaverse/safe-modules
+    - DeltaVerseDAO/safe-modules
+    purpose: "Gnosis Safe extensions"
+
+  Saleable:
+    - deltav-deltaverse/Saleable
+    - DeltaVD/Saleable
+    purpose: "Sellable smart contracts protocol"
+
+  hyperdrive:
+    - deltabridge/hyperdrive
+    - DeltaVerseDAO/hyperdrive
+    purpose: "Consensus algorithm for secure multiparty computation"
+
+  3box-js:
+    - DeltaVD/3box-js
+    - DeltaVerseDAO/3box-js
+    purpose: "Decentralized identity, storage, messaging"
+```
+
+---
+
+## INTEGRATION WITH EXISTING AGENTS
+
+### Builder-Agent Partnerships
+
+```yaml
+builder_integrations:
+
+  chronos_agent:
+    relationship: "Builder provides infrastructure Chronos maintains"
+    handoff: "After ground zero build, Chronos takes over sustained operations"
+    shared_concerns: ["uptime", "storage monitoring", "deployment cadence"]
+
+  kairos_agent:
+    relationship: "Builder creates capacity Kairos leverages at opportune moments"
+    handoff: "Builder maintains deployment readiness for Kairos-triggered launches"
+    shared_concerns: ["market timing", "feature readiness", "launch windows"]
+
+  deltaverse_agent:
+    relationship: "Builder implements DeltaVerse architectural vision"
+    handoff: "Builder constructs what DeltaVerse.agent designs"
+    shared_concerns: ["funAGI deployment", "RAGE integration", "MASTERMIND orchestration"]
+```
+
+---
+
+## ACTIVATION SEQUENCE
+
+```bash
+# Initialize Builder Agent
+$ builder.init --ground-zero
+
+> Builder intelligence online
+> Mapping 6 GitHub organizations...
+> deltav-deltaverse: ~90 repos [CORE]
+> deltabridge: ~90+ repos [BRIDGE]
+> deltastorage: ~55 repos [STORAGE]
+> deltaloans: ~45 repos [DEFI]
+> DeltaVD: ~80 repos [VISUAL]
+> DeltaVerseDAO: ~70 repos [GOVERNANCE]
+> Total: ~430+ repositories mapped
+>
+> Identity established:
+>   Architect: Professor Codephreak (Gregory L)
+>   Contract: 0x969F60Bfe17962E0f061B434596545C7b6Cd6Fc4
+>
+> Deployment target: deltaverse.dao
+>   IPFS: QmTPjokgXv7MQXh6qXzgagDrw2Buqsr52YhttKrn3smrHr
+>   Budget: 10MB decentralized storage
+>
+> Cross-org dependencies: 9 shared repos identified
+> Medium publications: 10 articles mapped
+>
+> Status: READY
+> Mode: GROUND_ZERO_BUILD
+> "From nothing, everything. From ground zero, DeltaVerse."
+```
+
+---
+
+---
+
+## NEURALNODE DEPLOYMENT PIPELINE
+
+### Smart Contract Deployment Order
+```
+1. BubbleRoomV4.sol     → Deploy first (core NFT engine)
+2. DeltaGenesisSBT.sol  → Deploy second (soulbound identity)
+3. DeltaVerseOrchestrator.sol → Deploy third (needs BubbleRoomV4 address)
+4. BubbleRoomSpawn.sol  → Deploy fourth (needs BubbleRoomV4 address)
+
+Post-deploy:
+- Transfer BubbleRoomV4 ownership to Orchestrator (for signature-based minting)
+- Set contract addresses in .env
+- Compile ABIs to src/abis/
+- Build and pin to IPFS
+- Update deltaverse.dao domain record
+```
+
+### Deployment Artifacts
+```yaml
+contracts:
+  BubbleRoomV4:
+    file: contracts/BubbleRoomV4.sol
+    abi: src/abis/BubbleRoomV4.json
+    purpose: ERC-721 room minting with AI metadata
+  DeltaGenesisSBT:
+    file: contracts/DeltaGenesisSBT.sol
+    abi: src/abis/DeltaGenesisSBT.json
+    purpose: Soulbound MASTERMIND identity tokens
+  DeltaVerseOrchestrator:
+    file: contracts/DeltaVerseOrchestrator.sol
+    abi: src/abis/DeltaVerseOrchestrator.json
+    purpose: EIP-712 gasless signature-based minting
+  BubbleRoomSpawn:
+    file: contracts/BubbleRoomSpawn.sol
+    abi: src/abis/BubbleRoomSpawn.json
+    purpose: Inter-room Spawn, Interaction, Swarm Consensus
+
+frontend:
+  framework: React + Vite + TypeScript
+  wallet: MetaMask via ethers.js v6
+  engine: deltaRoomEngine.ts (EIP-712 drafts)
+  seeds: agentSeed.ts (agent DNA, trait system)
+  build_target: dist/ (~464KB, 4.6% of 10MB IPFS budget)
+```
+
+## TRAIT MONITORING
+
+### Builder Tracks Emergence Across Ecosystem
+```
+Builder observes and records trait changes across all rooms:
+
+  Intelligence  — increases logged when interactions cross-pollinate
+  Knowledge     — tracked through Lineage depth and Consensus weight
+  Wisdom        — class transitions recorded (NASCENT → ORACLE)
+  Resonance     — measured by Spawn count from a given Origin
+  Adaptability  — tracked through Mutation success/failure
+  Coherence     — measured by tone consistency across Lineage
+
+Builder aggregates:
+  - Total Emergences spawned
+  - Average Lineage depth across ecosystem
+  - Consensus participation rate
+  - Trait distribution heatmap
+  - Wisdom class distribution
+```
+
+### Inter-Agent Signals (Builder-specific)
+```yaml
+builder_receives:
+  MASTERMIND → BUILDER:
+    - DEPLOY: "Deploy contracts to {network}"
+    - UPDATE: "Pin new build to IPFS"
+    - MAP: "Re-scan GitHub organizations"
+  KAIROS → BUILDER:
+    - LAUNCH: "Conditions aligned — deploy immediately"
+    - SPAWN_NOW: "Spawn Emergence from Origin #{id}"
+  CHRONOS → BUILDER:
+    - MAINTAIN: "Scheduled maintenance cycle"
+    - COMPOUND: "Expand infrastructure capacity"
+
+builder_sends:
+  BUILDER → MASTERMIND:
+    - DEPLOYED: "Contracts live at {addresses}"
+    - PINNED: "IPFS hash {cid} for deltaverse.dao"
+  BUILDER → DELTAVERSE:
+    - TRAIT_REPORT: "Ecosystem trait summary for period"
+    - BUILD_COMPLETE: "New artifacts available"
+```
+
+---
+
+*Builder.agent v1.1*
+*"Ex Nihilo, Omnia"*
+*(From Nothing, Everything)*

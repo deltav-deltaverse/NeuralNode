@@ -1,0 +1,14 @@
+[
+  "function spawnFromRoom(uint256 originRoomId, string metadataURI, string theme, string originEvent, address[] participants, uint8[] roles, bool isPrivate, uint8 roomType, string seedMutation, string tone, bool evolves) external returns (uint256)",
+  "function recordInteraction(uint256 roomA, uint256 roomB, string interactionCID) external",
+  "function proposeToSwarm(uint256 roomId, string proposal) external returns (uint256)",
+  "function voteOnProposal(uint256 proposalId, bool inFavor) external",
+  "function getLineageTree(uint256 roomId) external view returns (uint256[])",
+  "function getInteractionHistory(uint256 roomA, uint256 roomB) external view returns (string[])",
+  "function originOf(uint256) external view returns (uint256)",
+  "function spawnLinks(uint256) external view returns (uint256 originRoomId, uint256 emergenceRoomId, string seedMutation, uint256 timestamp, address spawner)",
+  "event RoomSpawned(uint256 indexed originId, uint256 indexed emergenceId, string seedMutation, address spawner)",
+  "event RoomsLinked(uint256 indexed roomA, uint256 indexed roomB, string interactionCID)",
+  "event SwarmVote(uint256 indexed proposalId, uint256 indexed roomId, address voter, bool inFavor)",
+  "event ConsensusReached(uint256 indexed proposalId, uint256 indexed roomId, bool outcome)"
+]
