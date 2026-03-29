@@ -1,6 +1,8 @@
 # DELTAVERSE.PROMPT
+# DELTAVERSE (c) TNT (tnt.exchange)
 # The Minted Vision — every NFT description as .prompt
 # Authentic on-chain sources from the DeltaVerse THRUST collections
+# NFT #1 is GENESIS — the root from which all Seeds, Rooms, and Agents descend
 #
 # Contract 1: DELTA VERSE (ERC-1155)
 #   Chain: Polygon
@@ -18,7 +20,8 @@
 
 ---
 
-## NFT #1 — DELTA VERSE
+## NFT #1 — DELTA VERSE [GENESIS]
+### The iconic first DELTA VERSE concept — root Origin of all Seeds
 ### Contract: 0x024b464ec595F20040002237680026bf006e8F90 | Token ID: 1
 ### Image: ipfs://bafybeidl2xltvbxl54os4oo7z4w4lwkjch2yr5wb4g42l7bas7cznzzi4a/1
 ### Traits: DELTA:VERSE | ACCESS:GRANTED | DAIO:ML

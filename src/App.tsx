@@ -10,11 +10,13 @@ import TraitViewer from './components/TraitViewer';
 import LineageTree from './components/LineageTree';
 import GovernancePanel from './components/GovernancePanel';
 import SeedBrowser from './components/SeedBrowser';
+import MintedVision from './components/MintedVision';
 import { type DeltaRoomDraft } from './engine/deltaRoomEngine';
 import { AGENT_SEEDS } from './engine/agentSeed';
+import { GENESIS_NFT, COPYRIGHT } from './config/genesis';
 import './styles/app.css';
 
-type View = 'home' | 'explore' | 'create' | 'spawn' | 'interact' | 'traits' | 'seeds' | 'governance' | 'drafts' | 'agents';
+type View = 'home' | 'explore' | 'create' | 'spawn' | 'interact' | 'traits' | 'seeds' | 'governance' | 'vision' | 'drafts' | 'agents';
 
 // Contract addresses - update after deployment
 const BUBBLE_ROOM_ADDRESS = import.meta.env.VITE_BUBBLE_ROOM_ADDRESS || '';
@@ -49,6 +51,7 @@ function AppContent() {
           <button className={view === 'traits' ? 'active' : ''} onClick={() => setView('traits')}>Traits</button>
           <button className={view === 'seeds' ? 'active' : ''} onClick={() => setView('seeds')}>Seeds</button>
           <button className={view === 'governance' ? 'active' : ''} onClick={() => setView('governance')}>Govern</button>
+          <button className={view === 'vision' ? 'active' : ''} onClick={() => setView('vision')}>Vision</button>
           <button className={view === 'drafts' ? 'active' : ''} onClick={() => setView('drafts')}>Drafts</button>
           <button className={view === 'agents' ? 'active' : ''} onClick={() => setView('agents')}>Agents</button>
         </nav>
@@ -59,16 +62,25 @@ function AppContent() {
         {view === 'home' && (
           <div className="home-view">
             <div className="hero">
-              <h2>The Living Imaginarium</h2>
+              <h2>A Fluid Dynamic Between Participants and AI</h2>
               <p>
-                DeltaVerse is a decentralized, AI-symbiotic metaverse architecture powered by
-                NFTs, smart contracts, narrative evolution, and participant-driven worldbuilding.
+                The Delta Verse represents an innovative and immersive creative realm where the
+                boundaries between participants and artificial intelligence seamlessly blur, giving
+                rise to imaginariums that bridge, evolve, and transform dynamic environments.
               </p>
               <p>
-                At its heart lies the <strong>BubbleRoomV4</strong> engine — minting interactive,
-                tone-responsive spaces — and the <strong>DeltaGenesisSBT</strong> soulbound tokens —
-                cryptographic proof of mythic participation.
+                Participants are active co-creators. Environments are fluid. AI responds in real-time.
+                Storytelling is alive. At its heart lies the <strong>BubbleRoomV4</strong> engine and
+                the <strong>DeltaGenesisSBT</strong> soulbound tokens.
               </p>
+              <div className="genesis-provenance">
+                <span className="provenance-label">Genesis Vision minted on-chain</span>
+                <div className="provenance-links">
+                  <a href={GENESIS_NFT.opensea} target="_blank" rel="noopener noreferrer">OpenSea</a>
+                  <a href={GENESIS_NFT.polygonscan} target="_blank" rel="noopener noreferrer">Polygonscan</a>
+                  <span className="provenance-copyright">{COPYRIGHT}</span>
+                </div>
+              </div>
             </div>
             <div className="room-types-grid">
               {[
@@ -183,6 +195,12 @@ function AppContent() {
         {view === 'governance' && (
           <div className="governance-view">
             <GovernancePanel governanceAddress={GOVERNANCE_ADDRESS} />
+          </div>
+        )}
+
+        {view === 'vision' && (
+          <div className="vision-view">
+            <MintedVision />
           </div>
         )}
 

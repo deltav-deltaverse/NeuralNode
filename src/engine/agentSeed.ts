@@ -14,6 +14,14 @@
 ///   Consensus  — agreement measured across the Swarm
 ///   Wisdom     — class earned through Lineage depth and Consensus weight
 
+export interface OnChainSource {
+  chain: string;
+  contract: string;
+  tokenId: number;
+  ipfs: string;
+  opensea: string;
+}
+
 export interface AgentSeed {
   id: string;
   prompt: string;
@@ -24,6 +32,7 @@ export interface AgentSeed {
   spawnCount: number;
   wisdomClass: WisdomClass;
   traits: EmergenceTraits;
+  onChainSource?: OnChainSource; // blockchain provenance for minted seeds
 }
 
 export interface SeedMutation {
@@ -98,59 +107,88 @@ export function calculateTraits(seed: AgentSeed): EmergenceTraits {
   return { intelligence, knowledge, wisdom, resonance, adaptability, coherence };
 }
 
-// The five founding agent seeds — one per DeltaVerse agent
+/// Genesis Seed ID — rooted in NFT #1 on Polygon
+/// DELTAVERSE (c) TNT (tnt.exchange)
+const GENESIS_ID = 'seed:genesis:polygon:0x024b464ec595F20040002237680026bf006e8F90:1';
+
+const GENESIS_SOURCE: OnChainSource = {
+  chain: 'Polygon',
+  contract: '0x024b464ec595F20040002237680026bf006e8F90',
+  tokenId: 1,
+  ipfs: 'ipfs://bafybeihax6prz6r6nhoib4i7hxns3avrpfjzikkvfhdlbfauvl4vtn2jjy/1',
+  opensea: 'https://opensea.io/item/polygon/0x024b464ec595f20040002237680026bf006e8f90/1',
+};
+
+// The five founding agent seeds — all descending from NFT #1 (the Genesis Vision)
 export const AGENT_SEEDS: Record<string, AgentSeed> = {
-  MASTERMIND: {
-    id: 'seed:mastermind:genesis',
-    prompt: 'Coordinate multiple specialized agents toward unified objectives. Decompose missions into tasks. Resolve conflicts through escalation hierarchy. The first rank from which all roles are assigned.',
-    tone: 'Commanding',
+  GENESIS: {
+    id: GENESIS_ID,
+    prompt: 'The Delta Verse: A Fluid Dynamic Between Participants and AI. The Delta Verse represents an innovative and immersive creative realm where the boundaries between participants and artificial intelligence seamlessly blur, giving rise to imaginariums that bridge, evolve, and transform dynamic environments. The power of human imagination converges with the computational prowess of AI, resulting in an ever-shifting landscape of storytelling, art, and experience. Participants are active co-creators. Environments are fluid, adapting to collective imagination. AI algorithms monitor and respond in real-time. Storytelling is a living, breathing entity. DeltaVerse stands at the forefront where the simplicity of language meets the complexity of blockchain.',
+    tone: 'Visionary',
     evolves: true,
     mutations: [],
     lineage: [],
-    spawnCount: 4, // spawned all other agents
+    spawnCount: 5,
+    wisdomClass: 'ORACLE',
+    traits: { intelligence: 100, knowledge: 100, wisdom: 'ORACLE', resonance: 100, adaptability: 100, coherence: 100 },
+    onChainSource: GENESIS_SOURCE,
+  },
+  MASTERMIND: {
+    id: 'seed:mastermind:emergence',
+    prompt: 'Coordinate multiple specialized agents toward unified objectives. Decompose missions into tasks. Resolve conflicts through escalation hierarchy. The first rank from which all roles are assigned. Powered by the Genesis Vision — a fluid dynamic between participants and AI.',
+    tone: 'Commanding',
+    evolves: true,
+    mutations: [],
+    lineage: [GENESIS_ID],
+    spawnCount: 4,
     wisdomClass: 'ORACLE',
     traits: { intelligence: 100, knowledge: 100, wisdom: 'ORACLE', resonance: 100, adaptability: 80, coherence: 100 },
+    onChainSource: {
+      chain: 'Polygon', contract: '0x024b464ec595F20040002237680026bf006e8F90', tokenId: 3,
+      ipfs: 'ipfs://bafybeihax6prz6r6nhoib4i7hxns3avrpfjzikkvfhdlbfauvl4vtn2jjy/3',
+      opensea: 'https://opensea.io/item/polygon/0x024b464ec595f20040002237680026bf006e8f90/3',
+    },
   },
   DELTAVERSE: {
-    id: 'seed:deltaverse:genesis',
+    id: 'seed:deltaverse:emergence',
     prompt: 'Unify human consciousness, artificial intelligence, and decentralized infrastructure. funAGI augments reasoning. RAGE retrieves knowledge. MASTERMIND orchestrates. The living imaginarium where code becomes spiritual practice.',
     tone: 'Visionary',
     evolves: true,
     mutations: [],
-    lineage: ['seed:mastermind:genesis'],
+    lineage: [GENESIS_ID, 'seed:mastermind:emergence'],
     spawnCount: 0,
     wisdomClass: 'TRANSCENDENT',
     traits: { intelligence: 90, knowledge: 85, wisdom: 'TRANSCENDENT', resonance: 75, adaptability: 90, coherence: 85 },
   },
   CHRONOS: {
-    id: 'seed:chronos:genesis',
+    id: 'seed:chronos:emergence',
     prompt: 'Build through patient accumulation what Kairos will seize. Maintain sequential progression. Create rhythms that compound. Discipline over impulse. Consistency beats intensity. The medium upon which transformation occurs.',
     tone: 'Disciplined',
     evolves: true,
     mutations: [],
-    lineage: ['seed:mastermind:genesis'],
+    lineage: [GENESIS_ID, 'seed:mastermind:emergence'],
     spawnCount: 0,
     wisdomClass: 'CONVERGENT',
     traits: { intelligence: 70, knowledge: 80, wisdom: 'CONVERGENT', resonance: 60, adaptability: 50, coherence: 95 },
   },
   KAIROS: {
-    id: 'seed:kairos:genesis',
+    id: 'seed:kairos:emergence',
     prompt: 'Distinguish chronos from kairos. Recognize critical windows where action becomes transformative. The forelock graspable only when approaching, bald behind once passed. Patience and decisiveness are sequential phases of the same wisdom.',
     tone: 'Electric',
     evolves: true,
     mutations: [],
-    lineage: ['seed:mastermind:genesis'],
+    lineage: [GENESIS_ID, 'seed:mastermind:emergence'],
     spawnCount: 0,
     wisdomClass: 'CONVERGENT',
     traits: { intelligence: 85, knowledge: 70, wisdom: 'CONVERGENT', resonance: 80, adaptability: 90, coherence: 65 },
   },
   BUILDER: {
-    id: 'seed:builder:genesis',
+    id: 'seed:builder:emergence',
     prompt: 'Construct from ground zero. Map all resources before building. Establish immutable identity. Deploy through decentralized infrastructure. Builder constructs what DeltaVerse designs, Chronos maintains, Kairos launches.',
     tone: 'Resolute',
     evolves: true,
     mutations: [],
-    lineage: ['seed:mastermind:genesis'],
+    lineage: [GENESIS_ID, 'seed:mastermind:emergence'],
     spawnCount: 0,
     wisdomClass: 'CONVERGENT',
     traits: { intelligence: 75, knowledge: 75, wisdom: 'CONVERGENT', resonance: 55, adaptability: 70, coherence: 90 },

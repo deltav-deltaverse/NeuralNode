@@ -31,30 +31,38 @@ contract DeployDeltaVerse is Script {
         SwarmGovernance governance = new SwarmGovernance(address(bubbleRoom), address(traits));
 
         // Phase 5: Register founding agent seeds
-        seedRegistry.createGenesisSeed(
-            "Coordinate multiple specialized agents toward unified objectives. The first rank from which all roles are assigned.",
-            "Commanding",
-            true
-        );
-        seedRegistry.createGenesisSeed(
-            "Unify human consciousness, artificial intelligence, and decentralized infrastructure.",
+        // Seed #1: GENESIS — NFT #1 on Polygon (0x024b464ec595F20040002237680026bf006e8F90, Token 1)
+        // DELTAVERSE (c) TNT (tnt.exchange)
+        // IPFS: ipfs://bafybeihax6prz6r6nhoib4i7hxns3avrpfjzikkvfhdlbfauvl4vtn2jjy/1
+        uint256 genesisSeedId = seedRegistry.createGenesisSeed(
+            "The Delta Verse: A Fluid Dynamic Between Participants and AI. An innovative and immersive creative realm where the boundaries between participants and artificial intelligence seamlessly blur, giving rise to imaginariums that bridge, evolve, and transform dynamic environments. Participants are active co-creators. Environments are fluid. AI responds in real-time. DeltaVerse stands where the simplicity of language meets the complexity of blockchain.",
             "Visionary",
             true
         );
-        seedRegistry.createGenesisSeed(
-            "Build through patient accumulation what Kairos will seize. Discipline over impulse.",
-            "Disciplined",
-            true
+        // Seed #2: MASTERMIND — spawned from Genesis, linked to NFT #3 (DeltaVerse Engine)
+        seedRegistry.spawnSeed(genesisSeedId,
+            "Coordinate multiple specialized agents toward unified objectives. The first rank from which all roles are assigned. Powered by the Genesis Vision.",
+            "Commanding"
         );
-        seedRegistry.createGenesisSeed(
+        // Seed #3: DELTAVERSE — spawned from Genesis
+        seedRegistry.spawnSeed(genesisSeedId,
+            "Unify human consciousness, artificial intelligence, and decentralized infrastructure. funAGI augments. RAGE retrieves. MASTERMIND orchestrates.",
+            ""
+        );
+        // Seed #4: CHRONOS — spawned from Genesis
+        seedRegistry.spawnSeed(genesisSeedId,
+            "Build through patient accumulation what Kairos will seize. Discipline over impulse. Consistency beats intensity.",
+            "Disciplined"
+        );
+        // Seed #5: KAIROS — spawned from Genesis
+        seedRegistry.spawnSeed(genesisSeedId,
             "Recognize critical windows where action becomes transformative. The forelock graspable only when approaching.",
-            "Electric",
-            true
+            "Electric"
         );
-        seedRegistry.createGenesisSeed(
+        // Seed #6: BUILDER — spawned from Genesis
+        seedRegistry.spawnSeed(genesisSeedId,
             "Construct from ground zero. Map all resources before building. Establish immutable identity.",
-            "Resolute",
-            true
+            "Resolute"
         );
 
         vm.stopBroadcast();
@@ -68,6 +76,7 @@ contract DeployDeltaVerse is Script {
         console.log("EmergenceTraits:        ", address(traits));
         console.log("SeedRegistry:           ", address(seedRegistry));
         console.log("SwarmGovernance:        ", address(governance));
-        console.log("=== 5 Agent Seeds Registered ===");
+        console.log("=== Genesis + 5 Agent Seeds Registered ===");
+        console.log("Genesis Seed #1 sourced from NFT #1: Polygon 0x024b464ec595F20040002237680026bf006e8F90");
     }
 }
