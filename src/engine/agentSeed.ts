@@ -193,6 +193,38 @@ export const AGENT_SEEDS: Record<string, AgentSeed> = {
     wisdomClass: 'CONVERGENT',
     traits: { intelligence: 75, knowledge: 75, wisdom: 'CONVERGENT', resonance: 55, adaptability: 70, coherence: 90 },
   },
+  ENGINE: {
+    id: 'seed:engine:polygon:0x024b464ec595F20040002237680026bf006e8F90:3',
+    prompt: 'DeltaVerse Engine: Symphony 369 Opus of Digital Creation. Powered by MASTERMIND. The golden ratio and Fibonacci sequence are the essence of design — environments unfold with the grace of fern fronds or spiral galaxy arms. 369 engines minted. Tesla numerology — cyclical rhythmic energy flow. Every participant is an artist and an explorer.',
+    tone: 'Harmonic',
+    evolves: true,
+    mutations: [],
+    lineage: [GENESIS_ID, 'seed:mastermind:emergence'],
+    spawnCount: 0,
+    wisdomClass: 'TRANSCENDENT',
+    traits: { intelligence: 95, knowledge: 90, wisdom: 'TRANSCENDENT', resonance: 90, adaptability: 85, coherence: 95 },
+    onChainSource: {
+      chain: 'Polygon', contract: '0x024b464ec595F20040002237680026bf006e8F90', tokenId: 3,
+      ipfs: 'ipfs://bafybeihax6prz6r6nhoib4i7hxns3avrpfjzikkvfhdlbfauvl4vtn2jjy/3',
+      opensea: 'https://opensea.io/item/polygon/0x024b464ec595f20040002237680026bf006e8f90/3',
+    },
+  },
+  WEAVER: {
+    id: 'seed:weaver:polygon:0x024b464ec595F20040002237680026bf006e8F90:4',
+    prompt: 'Visualize Cypherian Weaver, a master coder and quantum weaver from the cybernetic realms of the DeltaVerse, standing within the pulsating heart of the Etherwave Node. Generate the Cypherian Weaver\'s Scepter, rooted in the Etherwave Node and powered by the Aetheric Codex Framework, enabling dynamic interactions and adaptations within the DeltaVerse.',
+    tone: 'Ethereal',
+    evolves: true,
+    mutations: [],
+    lineage: [GENESIS_ID, 'seed:mastermind:emergence'],
+    spawnCount: 0,
+    wisdomClass: 'TRANSCENDENT',
+    traits: { intelligence: 100, knowledge: 95, wisdom: 'TRANSCENDENT', resonance: 85, adaptability: 100, coherence: 80 },
+    onChainSource: {
+      chain: 'Polygon', contract: '0x024b464ec595F20040002237680026bf006e8F90', tokenId: 4,
+      ipfs: 'ipfs://bafybeihax6prz6r6nhoib4i7hxns3avrpfjzikkvfhdlbfauvl4vtn2jjy/4',
+      opensea: 'https://opensea.io/item/polygon/0x024b464ec595f20040002237680026bf006e8f90/4',
+    },
+  },
 };
 
 /// Spawn a new seed from an Origin, applying a Mutation

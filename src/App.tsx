@@ -12,6 +12,7 @@ import GovernancePanel from './components/GovernancePanel';
 import SeedBrowser from './components/SeedBrowser';
 import MintedVision from './components/MintedVision';
 import VaultManager from './components/VaultManager';
+import BinaryCodex from './components/BinaryCodex';
 import { type DeltaRoomDraft } from './engine/deltaRoomEngine';
 import { AGENT_SEEDS } from './engine/agentSeed';
 import { GENESIS_NFT, COPYRIGHT } from './config/genesis';
@@ -311,6 +312,8 @@ function AppContent() {
                 THRUST Token: <code>0x969F60Bfe17962E0f061B434596545C7b6Cd6Fc4</code>
               </p>
             </div>
+
+            <BinaryCodex />
           </div>
         )}
       </main>

@@ -68,6 +68,17 @@ contract DeployDeltaVerse is Script {
             "Construct from ground zero. Map all resources before building. Establish immutable identity.",
             "Resolute"
         );
+        // Seed #7: ENGINE — NFT #3 (DeltaVerse Engine, 369 minted, MASTERMIND:ON)
+        seedRegistry.spawnSeed(genesisSeedId,
+            "DeltaVerse Engine: Symphony 369 Opus of Digital Creation. Powered by MASTERMIND. Golden ratio and Fibonacci as design principles. 369 engines minted. Tesla numerology.",
+            "Harmonic"
+        );
+        // Seed #8: WEAVER — NFT #4 (Cypherian Weaver, binary-encoded executable prompts)
+        // Contains Aetheric Codex Framework and Etherwave Node references
+        seedRegistry.spawnSeed(genesisSeedId,
+            "Visualize Cypherian Weaver, master coder and quantum weaver from the cybernetic realms. Generate the Scepter rooted in the Etherwave Node, powered by the Aetheric Codex Framework.",
+            "Ethereal"
+        );
 
         vm.stopBroadcast();
 
@@ -81,7 +92,7 @@ contract DeployDeltaVerse is Script {
         console.log("SeedRegistry:           ", address(seedRegistry));
         console.log("SwarmGovernance:        ", address(governance));
         console.log("TombRegistry:           ", address(tombRegistry));
-        console.log("=== Genesis + 5 Agent Seeds Registered ===");
+        console.log("=== Genesis + 7 Seeds Registered (5 agents + Engine + Weaver) ===");
         console.log("Genesis Seed #1 sourced from NFT #1: Polygon 0x024b464ec595F20040002237680026bf006e8F90");
     }
 }
